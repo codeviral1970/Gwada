@@ -1,6 +1,58 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Gwada excursion | Gwada
+{% block title %}Gwada excursion | Accueil
 {% endblock %}
 
-{% block body %}{% endblock %}
+{% block body %}
+
+	<!-- hero - start -->
+	<div class="bg-white pb-6 sm:pb-8 lg:pb-12">
+		<div class=" w-full h-full">
+
+			<section
+				class="min-h-96 flex justify-center items-center flex-1 shrink-0 bg-gray-100 overflow-hidden shadow-lg relative py-16 md:py-20 xl:py-48 bg-sea bg-fixed">
+
+				<!-- image - start -->
+				<img src="{{asset('./build/images/bg1.jpg')}}" loading="lazy" alt="" class="w-full h-full object-cover object-center absolute inset-0"/><!-- image - end -->
+
+				<!-- overlay - start --><div class="bg-gray-500  mix-blend-multiply absolute inset-0"> </div>
+				<!-- overlay - end -->
+
+				<!-- text start -->
+				<div class="sm:max-w-xl flex flex-col items-center relative">
+
+					<h1 class="text-white lg:text-4xl sm:text-2xl md:text-4xl font-bold text-center mb-8 md:mb-12 shadow-sm">
+						GWADA
+						<span class="text-rose-600">EXCURSION</span>
+					</h1>
+					{# <h1 class="text-5xl font-bold mt-0 mb-6">GWADA EXCURSION</h1> #}
+					<p class="text-white text-lg sm:text-xl text-center mb-4 md:mb-8">Partez explorer la Guadeloupe clé en main</p>
+
+					<div class="w-full flex flex-col sm:flex-row sm:justify-center gap-2.5 max-w-xs">
+						<a href="{{path('app_services')}}" class="inline-block bg-rose-500 hover:bg-rose-600 active:bg-rose-700 focus-visible:ring text-white text-sm md:text-base font-semibold text-center rounded-lg outline-none transition duration-100 px-8 py-3">Voir les excursions</a>
+					</div>
+				</div>
+				<!-- text end -->
+			</section>
+		</div>
+	</div>
+	<!-- hero - end -->
+
+	<!-- gallery - start -->
+	<div class="bg-white sm:py-8 lg:py-12 text-gray-500">
+
+		<div class="max-w-screen-2xl px-4 md:px-8 mx-auto">
+
+			<div class="mb-10">
+				<h2 class="text-gray-500 text-2xl lg:text-3xl font-bold text-center mb-4 md:mb-8 xl:mb-12">Nos sorties en mer</h2>
+
+				{% for home in homes %}
+					<div class="p-2 text-lg">{{home.description | raw}}</div>
+				{% endfor %}
+			</div>
+
+			{% include "components/_excursion.html.twig" %}
+		</div>
+	</div>
+	<!-- gallery - end -->
+{% endblock %}

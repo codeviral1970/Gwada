@@ -1,0 +1,22 @@
+{% extends "base.html.twig" %}
+
+{% block title "Contact" %}
+
+{% block body %}
+	<div class="bg-white py-6 sm:py-8 lg:py-12">
+		<div
+			class="max-w-screen-2xl px-4 md:px-8 mx-auto">
+			<!-- text - start -->
+			<div class="mb-10 md:mb-16">
+				<h2 class="text-gray-500 text-2xl lg:text-3xl font-bold text-center mb-4 md:mb-6">Nous contacter</h2>
+				<div>
+					<div class="max-w-screen-lg text-gray-500 md:text-lg text-justify mx-auto leading-loose">Vous souhaitez connaître les disponibilités pour planifier vos vacances? Contactez nous afin que l'on trouve l'option qui s'adapte la mieux à votre profil. Appelez nous ou venez nous voir sur un de nos 3 points de ventes:<br/><br/>
+						- Clément au Village artisanal de Sainte Anne.<br/>
+						- Benoit sur le marché de Sainte Anne.<br/>
+						- Virginie face au Supermarché U à Saint François.
+					</div>
+				</div>
+				{% include "components/_contactForm.html.twig" %}
+			</div>
+		</div>
+	{% endblock %}

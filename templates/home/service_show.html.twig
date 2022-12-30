@@ -1,0 +1,160 @@
+{% extends "base.html.twig" %}
+
+{% block title %}
+	{{services.name}}
+{% endblock %}
+
+{% block body %}
+	<div>
+		<div class="text-center">
+			<h1 class="font-bold uppercase text-gray-500 sm:text-4xl mt-10 text-xl">{{services.name}}</h1>
+		</div>
+	</div>
+	<div class="bg-white py-6 sm:py-8 lg:py-12">
+		<div class="max-w-screen-xl px-4 md:px-8 mx-auto">
+			<div class="grid md:grid-cols-2 gap-8 lg:gap-12">
+				<div class="md:pt-1">
+					<div class="w-full bg-gray-100 overflow-hidden rounded-lg shadow-lg">
+						<img src="{{ vich_uploader_asset(services) }}" loading="lazy" alt="{{services.name}}" class="object-center object-cover w-full h-72"/>
+					</div>
+				</div>
+				<div class="md:pt-1">
+					<div class="text-gray-500 text-lg mb-6 md:mb-8 text-justify leading-loose">
+						{{services.description | raw}}
+					</div>
+
+					<section class="overflow-hidden text-gray-700 ">
+						<div class="container px-5 py-2 mx-auto lg:pt-12 lg:px-32">
+							<div class="flex flex-wrap -m-1 md:-m-2">
+								<div class="flex flex-wrap w-1/3">
+									<div class="w-full p-1 md:p-2">
+										<img alt="gallery" class="block object-cover object-center w-full h-full rounded-lg" src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(73).webp">
+									</div>
+								</div>
+								<div class="flex flex-wrap w-1/3">
+									<div class="w-full p-1 md:p-2">
+										<img alt="gallery" class="block object-cover object-center w-full h-full rounded-lg" src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(74).webp">
+									</div>
+								</div>
+								<div class="flex flex-wrap w-1/3">
+									<div class="w-full p-1 md:p-2">
+										<img alt="gallery" class="block object-cover object-center w-full h-full rounded-lg" src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(75).webp">
+									</div>
+								</div>
+								<div class="flex flex-wrap w-1/3">
+									<div class="w-full p-1 md:p-2">
+										<img alt="gallery" class="block object-cover object-center w-full h-full rounded-lg" src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(70).webp">
+									</div>
+								</div>
+								<div class="flex flex-wrap w-1/3">
+									<div class="w-full p-1 md:p-2">
+										<img alt="gallery" class="block object-cover object-center w-full h-full rounded-lg" src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(76).webp">
+									</div>
+								</div>
+								<div class="flex flex-wrap w-1/3">
+									<div class="w-full p-1 md:p-2">
+										<img alt="gallery" class="block object-cover object-center w-full h-full rounded-lg" src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(72).webp">
+									</div>
+								</div>
+							</div>
+						</div>
+					</section>
+
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<div class="">
+		<div class="bg-gray-100 py-6 sm:py-8 lg:py-12">
+			<div class="max-w-screen-2xl px-4 md:px-8 mx-auto">
+				<h2 class="text-gray-800 text-2xl lg:text-3xl font-bold text-center mb-4 md:mb-8 xl:mb-12 ">Customer Reviews</h2>
+
+				<div
+					class="grid sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
+					<!-- review - start -->
+					<div class="flex flex-col border-2 border-rose-600 rounded-lg gap-3 p-4 md:p-6">
+						<div>
+							<span class="block text-lg font-bold text-center underline">Bon à savoir</span>
+						</div>
+						<!-- feature - start -->
+						<div class="flex flex-col p-4 md:p-6">
+							<div class="text-gray-500 text-lg mb-4 leading-relaxed">{{services.goodToKnow | raw}}</div>
+						</div>
+						<!-- feature - end -->
+					</div>
+					<!-- review - end -->
+
+					<!-- review - start -->
+					<div class="flex flex-col border-2 border-indigo-600 rounded-lg gap-3 p-4 md:p-6">
+						<div>
+							<h3 class="block text-lg font-semibold text-center underline">Déroulement de la journée</h3>
+						</div>
+						<!-- feature - start -->
+						<div class="flex flex-col p-4 md:p-6">
+							<div class="text-gray-500 text-lg mb-4 leading-relaxed">{{services.courseOfTheDay | raw}}</div>
+
+						</div>
+						<!-- feature - end -->
+
+					</div>
+					<!-- review - end -->
+
+					<!-- review - start -->
+					<div class="flex flex-col border-2 border-lime-600 rounded-lg gap-3 p-4 md:p-6">
+
+						<div>
+							<h3 class="block text-lg font-bold text-center underline">Au menu</h3>
+						</div>
+						<!-- feature - start -->
+						<div class="flex flex-col p-4 md:p-6">
+							<div class="text-gray-500 text-lg mb-4 leading-relaxed">{{services.menu | raw}}</div>
+						</div>
+						<!-- feature - end -->
+					</div>
+					<!-- review - end -->
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<div class="bg-white py-6 sm:py-8 lg:py-12">
+		<div class="max-w-screen-xl px-4 md:px-8 mx-auto">
+			<h2 class="text-gray-800 text-2xl lg:text-3xl font-bold text-center mb-4 md:mb-8 xl:mb-12">Nos formules</h2>
+
+			{# <div class="grid sm:grid-cols-4 md:grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-4 mb-6 md:mb-8"> #}
+			<div
+				class="grid lg:grid-cols-4 sm:grid-cols-2 gap-4 mb-4 md:mb-6">
+				<!-- plan - start -->
+				{% for formule in services.formules %}
+					<div class="flex flex-col border {{formule.style}} rounded-lg p-4 pt-6">
+						<div class="mb-12">
+							<div class="text-gray-800 text-xl font-bold text-center mb-2">{{formule.name}}</div>
+							<div
+								class="space-y-2">
+								<!-- check - start -->
+								<div class="flex gap-2 items-stretch">
+									<span class="text-gray-600">{{formule.description | raw}}</span>
+								</div>
+								<!-- check - end -->
+							</div>
+						</div>
+
+						<div class="flex flex-col gap-8 mt-auto">
+							<div class="flex justify-center items-end gap-1">
+								<span class="self-start text-gray-600"></span>
+								<span class="text-2xl text-gray-500 font-bold">Prix :
+									{{formule.price}}
+									€</span>
+							</div>
+						</div>
+					</div>
+				{% endfor %}
+				<!-- plan - end -->
+			</div>
+
+		</div>
+	</div>
+{% endblock %}
