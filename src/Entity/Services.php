@@ -2,18 +2,15 @@
 
 namespace App\Entity;
 
-
-
-use DateTimeImmutable;
+use App\Repository\ServicesRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
-use App\Repository\ServicesRepository;
-use Doctrine\Common\Collections\Collection;
+use Gedmo\Mapping\Annotation as Gedmo;
 use Symfony\Component\HttpFoundation\File\File;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
-use Doctrine\Common\Collections\ArrayCollection;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
-use Gedmo\Mapping\Annotation as Gedmo;
 
 #[ORM\Entity(repositoryClass: ServicesRepository::class)]
 #[Vich\Uploadable]
@@ -58,13 +55,12 @@ class Services
 
     #[ORM\Column(type: 'integer')]
     private ?int $imageSize = null;
-   
-    #[ORM\Column (nullable: true)]
+
+    #[ORM\Column(nullable: true)]
     private ?\DateTimeImmutable $updatedAt = null;
 
     #[ORM\Column(length: 125, nullable: true)]
     private ?string $tag = null;
-
 
     /**
      * If manually uploading a file (i.e. not using Symfony Form) ensure an instance
@@ -82,7 +78,7 @@ class Services
         if (null !== $imageFile) {
             // It is required that at least one field changes if you are using doctrine
             // otherwise the event listeners won't be called and the file is lost
-            $this->updatedAt = new DateTimeImmutable();
+            $this->updatedAt = new \DateTimeImmutable();
         }
     }
 
@@ -114,7 +110,6 @@ class Services
     public function __construct()
     {
         return $this->formules = new ArrayCollection();
-        
     }
 
     public function getId(): ?int
@@ -231,11 +226,10 @@ class Services
 
     public function __toString()
     {
-      return $this->name;
-      //return $this->imageFile->getFilename();
+        return $this->name;
+        // return $this->imageFile->getFilename();
     }
 
-  
     public function getUpdatedAt(): ?\DateTimeImmutable
     {
         return $this->updatedAt;
@@ -259,5 +253,4 @@ class Services
 
         return $this;
     }
-
 }
