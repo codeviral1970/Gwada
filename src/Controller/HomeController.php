@@ -92,11 +92,11 @@ class HomeController extends AbstractController
             //   'message' => $contact->getMessage()
             // ]);
 
-            $email = (new Email())
-            ->from($contact->getEmail())
-            ->to('contact@codeviral.fr')
-            ->subject($contact->getSubject())
-            ->html($contact->getMessage());
+            // $email = (new Email())
+            // ->from($contact->getEmail())
+            // ->to('contact@codeviral.fr')
+            // ->subject($contact->getSubject())
+            // ->html($contact->getMessage());
 
             $mailer->send($email);
 

@@ -3,3 +3,4 @@ parameters:
     - src
     - tests
   level: 9
+  checkGenericClassInNonGenericObjectType: false

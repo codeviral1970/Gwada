@@ -1,0 +1,9 @@
+easy_admin:
+  design:
+    form_theme:
+      - '@VichUploader/Form/fields.html.twig'
+  entities:
+    Services:
+      form:
+        fields:
+          - { property: 'imageFile', type: 'file' }
