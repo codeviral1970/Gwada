@@ -3,11 +3,11 @@
 namespace App\Controller\Admin;
 
 use App\Entity\Formule;
-use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
-use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
-use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
-use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
+use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 
 class FormuleCrudController extends AbstractCrudController
 {
@@ -16,7 +16,6 @@ class FormuleCrudController extends AbstractCrudController
         return Formule::class;
     }
 
-    
     public function configureFields(string $pageName): iterable
     {
         return [
@@ -28,5 +27,4 @@ class FormuleCrudController extends AbstractCrudController
             AssociationField::new('activity', 'Lien activité'),
         ];
     }
-    
 }

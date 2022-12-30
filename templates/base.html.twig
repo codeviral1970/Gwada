@@ -14,7 +14,7 @@
             {{ encore_entry_script_tags('app') }}
         {% endblock %}
     </head>
-    <body>
+    <body class="flex flex-col min-h-screen">
         {% include "components/_nav.html.twig" %}
 		{% block body %}{% endblock %}
 		{% include "components/_footer.html.twig" %}
