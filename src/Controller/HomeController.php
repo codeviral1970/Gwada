@@ -98,7 +98,7 @@ class HomeController extends AbstractController
             // ->subject($contact->getSubject())
             // ->html($contact->getMessage());
 
-            $mailer->send($email);
+            // $mailer->send($email);
 
             $this->addFlash('success', 'Votre message à bien été envoyé');
 
