@@ -124,5 +124,4 @@ class Home
     {
         return $this->imageSize;
     }
-
 }

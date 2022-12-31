@@ -88,13 +88,12 @@ class About
     }
 
      public function setImageName(?string $imageName): void
-    {
-        $this->imageName = $imageName;
-    }
+     {
+         $this->imageName = $imageName;
+     }
 
     public function getImageName(): ?string
     {
         return $this->imageName;
     }
-
 }

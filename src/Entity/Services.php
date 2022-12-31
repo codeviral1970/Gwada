@@ -8,6 +8,7 @@ use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
+use Gedmo\Mapping\Annotation\Slug;
 use Symfony\Component\HttpFoundation\File\File;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
@@ -31,7 +32,7 @@ class Services
     private ?string $avatar = null;
 
     #[ORM\Column(length: 255)]
-    #[Gedmo\Slug(fields: ['name'], unique: true)]
+    #[Slug(fields: ['name'], updatable: true)]
     private ?string $slug = null;
 
     #[ORM\Column(type: Types::TEXT, nullable: true)]
@@ -58,9 +59,6 @@ class Services
 
     #[ORM\Column(nullable: true)]
     private ?\DateTimeImmutable $updatedAt = null;
-
-    #[ORM\Column(length: 125, nullable: true)]
-    private ?string $tag = null;
 
     /**
      * If manually uploading a file (i.e. not using Symfony Form) ensure an instance
@@ -158,6 +156,13 @@ class Services
         return $this->slug;
     }
 
+    public function setSlug(?string $slug): self
+    {
+        $this->slug = $slug;
+
+        return $this;
+    }
+
     public function getGoodToKnow(): ?string
     {
         return $this->goodToKnow;
@@ -238,18 +243,6 @@ class Services
     public function setUpdatedAt(\DateTimeImmutable $updatedAt): self
     {
         $this->updatedAt = $updatedAt;
-
-        return $this;
-    }
-
-    public function getTag(): ?string
-    {
-        return $this->tag;
-    }
-
-    public function setTag(?string $tag): self
-    {
-        $this->tag = $tag;
 
         return $this;
     }

@@ -90,9 +90,11 @@
         ],
         "fix": "php-cs-fixer fix",
         "check": [
-          "phpstan",
           "php-cs-fixer fix --dry-run --diff"
-        ]
+        ],
+        "stan": [
+          "phpstan"
+        ] 
     },
     "conflict": {
         "symfony/symfony": "*"
