@@ -22,13 +22,10 @@ function toggleNav() {
 
 setTimeout(() => {
   const success = document.getElementById('success-message');
-
-  // 👇️ hides element (still takes up space on page)
   success.style.visibility = 'hidden';
-}, 1000);
+}, 4000);
 
 setTimeout(() => {
   const alert = document.getElementById('alert');
-
   alert.style.display = 'none';
 }, 5000);

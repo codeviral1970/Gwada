@@ -5,15 +5,18 @@ namespace App\Controller;
 use App\Entity\Contact;
 use App\Form\ContactType;
 use App\Repository\AboutRepository;
+use App\Repository\ContactInfoRepository;
 use App\Repository\HomeRepository;
 use App\Repository\ServicesRepository;
-use App\Repository\ContactInfoRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bridge\Twig\Mime\TemplatedEmail;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Mailer\Mailer;
 use Symfony\Component\Mailer\MailerInterface;
+use Symfony\Component\Mailer\Transport;
+use Symfony\Component\Mailer\Transport\TransportInterface;
 use Symfony\Component\Mime\Email;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -57,7 +60,7 @@ class HomeController extends AbstractController
     public function serviceShow(string $slug, ServicesRepository $services): Response
     {
         $services = $services->findOneBy(['slug' => $slug]);
-        // dd($services);
+
         return $this->render('home/service_show.html.twig', [
           'services' => $services,
         ]);
@@ -68,53 +71,56 @@ class HomeController extends AbstractController
     Request $request,
     EntityManagerInterface $manager,
     MailerInterface $mailer,
-    ContactInfoRepository $contactInfo
+    ContactInfoRepository $contactInfo,
+    TransportInterface $transport
     ): Response {
+        $contactDescription = $contactInfo->findAll();
 
-      $contactDescription = $contactInfo->findAll(); 
-        
-      $contact = new Contact();
+        $contact = new Contact();
 
-      $form = $this->createForm(ContactType::class, $contact);
+        $form = $this->createForm(ContactType::class, $contact);
 
-      $form->handleRequest($request);
+        $form->handleRequest($request);
 
-      $message = null;
+        $message = null;
 
-      if ($form->isSubmitted() && $form->isValid()) {
-          $contact = $form->getData();
-          $manager->persist($contact);
-          $manager->flush();
+        if ($form->isSubmitted() && $form->isValid()) {
+            $contact = $form->getData();
+            $manager->persist($contact);
+            $manager->flush();
 
             // dd($contact);
             // $email = (new TemplatedEmail())
-            // ->from($contact->getEmail())
-            // ->to('contact@codeviral.fr')
+            // ->from('contact@codeviral.fr')
+            // ->to($contact->getEmail())
             // ->subject($contact->getSubject())
-            // ->htmlTemplate('email/welcome.html.twig')
+            // ->textTemplate('email/welcome.html.twig')
             // ->context([
-            //   'name' => $contact->getFirstName(),
-            //   'message' => $contact->getMessage()
-            // ]);
+            //     'message' => $contact->getMessage()
+            // ])
+            // ;
 
-            // $email = (new Email())
-            // ->from($contact->getEmail())
-            // ->to('contact@codeviral.fr')
-            // ->subject($contact->getSubject())
-            // ->html($contact->getMessage());
+            $email = (new Email())
+            ->from('contact@codeviral.fr')
+            ->to($contact->getEmail())
+            ->subject($contact->getSubject())
+            ->html($contact->getMessage());
 
-            // $mailer->send($email);
+            $transport = Transport::fromDsn($_ENV['MAILER_DSN']);
+            $mailer = new Mailer($transport);
 
-          $this->addFlash('success', 'Votre message à bien été envoyé');
+            $mailer->send($email);
 
-          return $this->redirectToRoute('app_contact');
-      }
+            $this->addFlash('success', 'Votre message à bien été envoyé');
 
-      return $this->render('home/contact.html.twig', [
-        'form' => $form->createView(),
-        'contactDescription' => $contactDescription
-      ]);
-  }
+            return $this->redirectToRoute('app_contact');
+        }
+
+        return $this->render('home/contact.html.twig', [
+          'form' => $form->createView(),
+          'contactDescription' => $contactDescription,
+        ]);
+    }
 
       #[Route('/faqs', name: 'app_faq')]
       public function faq(): Response

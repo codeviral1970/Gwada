@@ -3,11 +3,11 @@
 namespace App\Controller\Admin;
 
 use App\Entity\About;
+use App\Entity\ContactInfo;
 use App\Entity\Formule;
 use App\Entity\Home;
 use App\Entity\Services;
 use App\Entity\User;
-use App\Entity\ContactInfo;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
 use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractDashboardController;
