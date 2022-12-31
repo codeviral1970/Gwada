@@ -12,9 +12,18 @@ vich_uploader:
             inject_on_load: false
             delete_on_update: true
             delete_on_remove: true
+        home: 
+            uri_prefix: '%app.path.home_images%'
+            upload_destination: '%kernel.project_dir%/public%app.path.home_images%'
+            namer: Vich\UploaderBundle\Naming\SmartUniqueNamer
+            inject_on_load: false
+            delete_on_update: true
+            delete_on_remove: true
+        about: 
+            uri_prefix: '%app.path.about_images%'
+            upload_destination: '%kernel.project_dir%/public%app.path.about_images%'
+            namer: Vich\UploaderBundle\Naming\SmartUniqueNamer
+            inject_on_load: false
+            delete_on_update: true
+            delete_on_remove: true
 
-    #mappings:
-    #    products:
-    #        uri_prefix: /images/products
-    #        upload_destination: '%kernel.project_dir%/public/images/products'
-    #        namer: Vich\UploaderBundle\Naming\SmartUniqueNamer

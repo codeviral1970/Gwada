@@ -6,6 +6,10 @@ use App\Entity\Home;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\NumberField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
+use Vich\UploaderBundle\Form\Type\VichImageType;
 
 class HomeCrudController extends AbstractCrudController
 {
@@ -18,6 +22,13 @@ class HomeCrudController extends AbstractCrudController
     {
         return [
             IdField::new('id')->onlyOnIndex(),
+            TextField::new('title'),
+            TextField::new('imageName'),
+            NumberField::new('imageSize')->hideOnForm(),
+            TextField::new('imageFile', 'Bg image')
+              ->setFormType(VichImageType::class)
+              ->hideOnIndex(),
+            ImageField::new('bgImg')->setBasePath('images/home')->onlyOnIndex(),
             TextEditorField::new('description'),
         ];
     }

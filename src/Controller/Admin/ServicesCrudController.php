@@ -25,17 +25,6 @@ class ServicesCrudController extends AbstractCrudController
             TextField::new('name', 'Titre'),
             SlugField::new('slug', 'slug')->setTargetFieldName('name'),
             TextEditorField::new('description'),
-            // ImageField::new('imageFile', 'Image')
-            //     ->setFormType(VichImageType::class)
-            //     ->setBasePath('images/')
-            //     ->setUploadDir('public/build/images/services')
-            //     ->setUploadedFileNamePattern(('[randomhash].[extension]'))
-            //  ,
-            // ImageField::new('imageFile', 'Image')
-            //   ->setBasePath('images/services')
-            //    ->setUploadDir('public/images/services')
-            //    ->setUploadedFileNamePattern(('[randomhash].[extension]')),
-
             TextField::new('imageFile', 'Nom de l\'image')
               ->setFormType(VichImageType::class)
               ->hideOnIndex(),
