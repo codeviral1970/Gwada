@@ -11,7 +11,7 @@
 				{% for about in abouts %}
 				<div class="md:pt-1">
 					<div class="h-64 md:h-auto bg-gray-100 overflow-hidden rounded-lg shadow-lg">
-						<img src="{{ vich_uploader_asset(about, 'imageFile') }}" loading="lazy" alt="{{about.imageName}}" class="w-full h-full object-cover object-center"/>
+						<img src="{{ vich_uploader_asset(about, 'imageFile') | imagine_filter('about') }}" loading="lazy" alt="{{about.imageName}}" class="w-full h-full object-cover object-center"/>
 					</div>
 				</div>
 
