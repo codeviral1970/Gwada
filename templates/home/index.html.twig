@@ -8,12 +8,15 @@
 	<!-- hero - start -->
 	<div class="bg-white pb-6 sm:pb-8 lg:pb-12">
 		<div class=" w-full h-full">
-
+      {% for img in homes %}
 			<section
-				class="min-h-96 flex justify-center items-center flex-1 shrink-0 bg-gray-100 overflow-hidden shadow-lg relative py-16 md:py-20 xl:py-48 bg-sea bg-fixed">
-
+				class="min-h-96 flex justify-center items-center flex-1 shrink-0 bg-gray-100 overflow-hidden shadow-lg relative py-16 md:py-20 xl:py-48 bg-sea bg-fixed"> 
+				
+				
 				<!-- image - start -->
-				<img src="{{asset('./build/images/bg1.jpg')}}" loading="lazy" alt="" class="w-full h-full object-cover object-center absolute inset-0"/><!-- image - end -->
+				<img src="{{ vich_uploader_asset(img, 'imageFile') }}" loading="lazy" alt="{{img.imageName}}" class="w-full h-full object-cover object-center absolute inset-0"/>
+				<!-- image - end -->
+				
 
 				<!-- overlay - start --><div class="bg-gray-500  mix-blend-multiply absolute inset-0"> </div>
 				<!-- overlay - end -->
@@ -34,6 +37,7 @@
 				</div>
 				<!-- text end -->
 			</section>
+			{% endfor %}
 		</div>
 	</div>
 	<!-- hero - end -->
@@ -43,13 +47,13 @@
 
 		<div class="max-w-screen-2xl px-4 md:px-8 mx-auto">
 
+			{% for home in homes %}
 			<div class="mb-10">
-				<h2 class="text-gray-500 text-2xl lg:text-3xl font-bold text-center mb-4 md:mb-8 xl:mb-12">Nos sorties en mer</h2>
+				<h2 class="text-gray-500 text-2xl lg:text-3xl font-bold text-center mb-4 md:mb-8 xl:mb-12">{{home.title}}</h2>
 
-				{% for home in homes %}
 					<div class="p-2 text-lg">{{home.description | raw}}</div>
-				{% endfor %}
 			</div>
+			{% endfor %}
 
 			{% include "components/_excursion.html.twig" %}
 		</div>
