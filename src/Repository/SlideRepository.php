@@ -2,26 +2,26 @@
 
 namespace App\Repository;
 
-use App\Entity\Services;
+use App\Entity\Slide;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
- * @extends ServiceEntityRepository<Services>
+ * @extends ServiceEntityRepository<Slide>
  *
- * @method Services|null find($id, $lockMode = null, $lockVersion = null)
- * @method Services|null findOneBy(array $criteria, array $orderBy = null)
- * @method Services[]    findAll()
- * @method Services[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
+ * @method Slide|null find($id, $lockMode = null, $lockVersion = null)
+ * @method Slide|null findOneBy(array $criteria, array $orderBy = null)
+ * @method Slide[]    findAll()
+ * @method Slide[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
-class ServicesRepository extends ServiceEntityRepository
+class SlideRepository extends ServiceEntityRepository
 {
     public function __construct(ManagerRegistry $registry)
     {
-        parent::__construct($registry, Services::class);
+        parent::__construct($registry, Slide::class);
     }
 
-    public function save(Services $entity, bool $flush = false): void
+    public function save(Slide $entity, bool $flush = false): void
     {
         $this->getEntityManager()->persist($entity);
 
@@ -30,7 +30,7 @@ class ServicesRepository extends ServiceEntityRepository
         }
     }
 
-    public function remove(Services $entity, bool $flush = false): void
+    public function remove(Slide $entity, bool $flush = false): void
     {
         $this->getEntityManager()->remove($entity);
 
@@ -39,17 +39,8 @@ class ServicesRepository extends ServiceEntityRepository
         }
     }
 
-    public function findAllLink()
-    {
-        return $this->getEntityManager()
-            ->createQuery(
-                'SELECT p FROM AppBundle:Product p ORDER BY p.name ASC'
-            )
-            ->getResult();
-    }
-
 //    /**
-//     * @return Services[] Returns an array of Services objects
+//     * @return Slide[] Returns an array of Slide objects
 //     */
 //    public function findByExampleField($value): array
 //    {
@@ -63,7 +54,7 @@ class ServicesRepository extends ServiceEntityRepository
 //        ;
 //    }
 
-//    public function findOneBySomeField($value): ?Services
+//    public function findOneBySomeField($value): ?Slide
 //    {
 //        return $this->createQueryBuilder('s')
 //            ->andWhere('s.exampleField = :val')

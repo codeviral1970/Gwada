@@ -8,12 +8,15 @@ use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation\Slug;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\HttpFoundation\File\File;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
+use Symfony\Component\Validator\Constraints as Assert;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 #[ORM\Entity(repositoryClass: ServicesRepository::class)]
 #[Vich\Uploadable]
+#[UniqueEntity('name')]
 class Services
 {
     #[ORM\Id]
@@ -25,6 +28,7 @@ class Services
     private ?string $name = null;
 
     #[ORM\Column(type: Types::TEXT)]
+    #[Assert\NotBlank]
     private ?string $description = null;
 
     #[ORM\Column(length: 255, nullable: true)]
@@ -58,6 +62,9 @@ class Services
 
     #[ORM\Column(nullable: true)]
     private ?\DateTimeImmutable $updatedAt = null;
+
+    #[ORM\OneToMany(mappedBy: 'gallery', targetEntity: Slide::class)]
+    private Collection $slides;
 
     /**
      * If manually uploading a file (i.e. not using Symfony Form) ensure an instance
@@ -107,6 +114,8 @@ class Services
     public function __construct()
     {
         return $this->formules = new ArrayCollection();
+        $this->service = new ArrayCollection();
+        $this->slides = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -242,6 +251,36 @@ class Services
     public function setUpdatedAt(\DateTimeImmutable $updatedAt): self
     {
         $this->updatedAt = $updatedAt;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Slide>
+     */
+    public function getSlides(): Collection
+    {
+        return $this->slides;
+    }
+
+    public function addSlide(Slide $slide): self
+    {
+        if (!$this->slides->contains($slide)) {
+            $this->slides->add($slide);
+            $slide->setGallery($this);
+        }
+
+        return $this;
+    }
+
+    public function removeSlide(Slide $slide): self
+    {
+        if ($this->slides->removeElement($slide)) {
+            // set the owning side to null (unless already changed)
+            if ($slide->getGallery() === $this) {
+                $slide->setGallery(null);
+            }
+        }
 
         return $this;
     }

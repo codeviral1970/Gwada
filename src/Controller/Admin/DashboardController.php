@@ -7,6 +7,7 @@ use App\Entity\ContactInfo;
 use App\Entity\Formule;
 use App\Entity\Home;
 use App\Entity\Services;
+use App\Entity\Slide;
 use App\Entity\User;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
 use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
@@ -39,6 +40,7 @@ class DashboardController extends AbstractDashboardController
             MenuItem::linkToCrud('Accueil', 'fas fa-home', Home::class),
             MenuItem::linkToCrud('A propos', 'fas fa-user', About::class),
             MenuItem::linkToCrud('Activités', 'fas fa-list', Services::class),
+            MenuItem::linkToCrud('Image', 'fas fa-list', Slide::class),
             MenuItem::linkToCrud('Formule', 'fas fa-file', Formule::class),
             MenuItem::linkToCrud('Contact', 'fas fa-users', ContactInfo::class),
         ]);

@@ -7,6 +7,7 @@ parameters:
     app.path.services_images: /images/services
     app.path.home_images: /images/home
     app.path.about_images: /images/about
+    app.path.gallery_images: /images/gallery
     
 services:
     # default configuration for services in *this* file

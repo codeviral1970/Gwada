@@ -1,7 +1,7 @@
 {% extends '@!EasyAdmin/page/content.html.twig' %}
 
 {% block page_title %}
-	Welcome to my Dashboard
+	Bienvenue sur la page administration du site
 {% endblock %}
 {% block head_stylesheets %}
 	<link rel="stylesheet" href="{{ asset('app.css', ea.assets.defaultAssetPackageName) }}">
@@ -48,10 +48,12 @@
 				</div>
 			</div>
 		</div>
-		<div class="flex bg-body mt-5 p-4 w-2/3">
-			<p>ici chart</p>
-			<div class=""></div>
+		<div class="flex mt-5 p-4 text-black">
 		</div>
+			<h2>Mode d'utilisation de l'admin<h2/>
+			<div>
+				<p>Website c'est l'onglet qui permet de gérer toutes les pages du site. <p/>
+			</div>
 	</div>
 
 {% endblock %}

@@ -2,80 +2,74 @@
 
 namespace App\Entity;
 
-use App\Repository\HomeRepository;
-use Doctrine\DBAL\Types\Types;
+use App\Repository\SlideRepository;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\HttpFoundation\File\File;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
-#[ORM\Entity(repositoryClass: HomeRepository::class)]
+#[ORM\Entity(repositoryClass: SlideRepository::class)]
 #[Vich\Uploadable]
-class Home
+class Slide
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
     private ?int $id = null;
 
-    #[ORM\Column(type: Types::TEXT)]
-    private ?string $description = null;
-
     #[ORM\Column(length: 255)]
-    private ?string $title = null;
+    private ?string $caption = null;
 
     #[ORM\Column(length: 255, nullable: true)]
-    private ?string $bgImg = null;
-
-    #[Vich\UploadableField(mapping: 'home', fileNameProperty: 'bgImg', size: 'imageSize')]
-    private ?File $imageFile = null;
-
-    #[ORM\Column(type: 'string')]
     private ?string $imageName = null;
 
-    #[ORM\Column(type: 'integer', nullable: true)]
-    private ?int $imageSize = null;
-
-    #[ORM\Column(nullable: true)]
+    #[ORM\Column]
     private ?\DateTimeImmutable $updatedAt = null;
+
+    // NOTE: This is not a mapped field of entity metadata, just a simple property.
+    #[Vich\UploadableField(mapping: 'slide', fileNameProperty: 'caption')]
+    private ?File $imageFile = null;
+
+    #[ORM\ManyToOne(inversedBy: 'slides')]
+    private ?Services $gallery = null;
 
     public function getId(): ?int
     {
         return $this->id;
     }
 
-    public function getDescription(): ?string
+    public function getCaption(): ?string
     {
-        return $this->description;
+        return $this->caption;
     }
 
-    public function setDescription(string $description): self
+    public function setCaption(string $caption): self
     {
-        $this->description = $description;
+        $this->caption = $caption;
 
         return $this;
     }
 
-    public function getTitle(): ?string
+    public function getImageName(): ?string
     {
-        return $this->title;
+        return $this->imageName;
     }
 
-    public function setTitle(string $title): self
+    public function setImageName(?string $imageName): self
     {
-        $this->title = $title;
+        $this->imageName = $imageName;
 
         return $this;
     }
 
-    public function getBgImg(): ?string
+    public function getUpdatedAt(): ?\DateTimeImmutable
     {
-        return $this->bgImg;
+        return $this->updatedAt;
     }
 
-    public function setBgImg(?string $bgImg): self
+    public function setUpdatedAt(\DateTimeImmutable $updatedAt): self
     {
-        $this->bgImg = $bgImg;
+        $this->updatedAt = $updatedAt;
 
         return $this;
     }
@@ -105,34 +99,14 @@ class Home
         return $this->imageFile;
     }
 
-    public function setImageName(?string $imageName): void
+    public function getGallery(): ?Services
     {
-        $this->imageName = $imageName;
+        return $this->gallery;
     }
 
-    public function getImageName(): ?string
+    public function setGallery(?Services $gallery): self
     {
-        return $this->imageName;
-    }
-
-    public function setImageSize(?int $imageSize): void
-    {
-        $this->imageSize = $imageSize;
-    }
-
-    public function getImageSize(): ?int
-    {
-        return $this->imageSize;
-    }
-
-    public function getUpdatedAt(): ?\DateTimeImmutable
-    {
-        return $this->updatedAt;
-    }
-
-    public function setUpdatedAt(?\DateTimeImmutable $updatedAt): self
-    {
-        $this->updatedAt = $updatedAt;
+        $this->gallery = $gallery;
 
         return $this;
     }
