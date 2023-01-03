@@ -25,7 +25,9 @@ class ServicesCrudController extends AbstractCrudController
         return [
             IdField::new('id')->hideOnForm(),
             TextField::new('name', 'Titre'),
-            SlugField::new('slug', 'slug')->setTargetFieldName('name'),
+            SlugField::new('slug', 'slug')
+                ->setTargetFieldName('name')
+                ->onlyOnForms(),
             TextEditorField::new('description'),
             TextField::new('imageFile', 'Image')
               ->setFormType(VichImageType::class)

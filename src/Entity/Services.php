@@ -237,10 +237,9 @@ class Services
         return $this;
     }
 
-    public function __toString()
+    public function __toString(): string
     {
         return $this->name;
-        // return $this->imageFile->getFilename();
     }
 
     public function getUpdatedAt(): ?\DateTimeImmutable

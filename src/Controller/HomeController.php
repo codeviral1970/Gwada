@@ -24,16 +24,21 @@ use Symfony\Component\Routing\Annotation\Route;
 class HomeController extends AbstractController
 {
     #[Route('/', name: 'app_home')]
-    public function index(ServicesRepository $services, HomeRepository $home): Response
-    {
+    public function index(
+      ServicesRepository $services,
+      HomeRepository $home,
+      SlideRepository $slide
+      ): Response {
         $services = $services->findAll();
         $homes = $home->findAll();
         $footerYear = new \DateTime();
+        $lastSlides = $slide->findLastTreeImages();
 
         return $this->render('home/index.html.twig', [
           'services' => $services,
           'homes' => $homes,
           'footerYear' => $footerYear,
+          'slides' => $lastSlides,
         ]);
     }
 
@@ -60,13 +65,12 @@ class HomeController extends AbstractController
     #[Route('/activites/{slug}', name: 'app_services_show', methods: ['GET'])]
     public function serviceShow(string $slug, ServicesRepository $services, SlideRepository $slide): Response
     {
+        $links = $services->findAll();
         $services = $services->findOneBy(['slug' => $slug]);
-
-        $gallery = $slide->findAll();
 
         return $this->render('home/service_show.html.twig', [
           'services' => $services,
-          'gallery' => $gallery,
+          'links' => $links,
         ]);
     }
 

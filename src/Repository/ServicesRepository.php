@@ -39,14 +39,14 @@ class ServicesRepository extends ServiceEntityRepository
         }
     }
 
-    public function findAllLink()
-    {
-        return $this->getEntityManager()
-            ->createQuery(
-                'SELECT p FROM AppBundle:Product p ORDER BY p.name ASC'
-            )
-            ->getResult();
-    }
+    // public function findAllLink()
+    // {
+    //     return $this->getEntityManager()
+    //         ->createQuery(
+    //             'SELECT p FROM AppBundle:Product p ORDER BY p.name ASC'
+    //         )
+    //         ->getResult();
+    // }
 
 //    /**
 //     * @return Services[] Returns an array of Services objects
