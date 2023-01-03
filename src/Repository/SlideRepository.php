@@ -13,6 +13,7 @@ use Doctrine\Persistence\ManagerRegistry;
  * @method Slide|null findOneBy(array $criteria, array $orderBy = null)
  * @method Slide[]    findAll()
  * @method Slide[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
+ * @method Slide[]    findLastTreeImages()
  */
 class SlideRepository extends ServiceEntityRepository
 {
@@ -39,6 +40,14 @@ class SlideRepository extends ServiceEntityRepository
         }
     }
 
+    public function findLastTreeImages()
+    {
+        return $this->createQueryBuilder('s')
+        ->orderBy('s.id', 'DESC')
+        ->setMaxResults('3')
+        ->getQuery()
+        ->getResult();
+    }
 //    /**
 //     * @return Slide[] Returns an array of Slide objects
 //     */

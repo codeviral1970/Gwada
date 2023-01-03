@@ -13,8 +13,7 @@
 					class="min-h-96 flex justify-center items-center flex-1 shrink-0 bg-gray-100 overflow-hidden shadow-lg relative py-16 md:py-20 xl:py-48 bg-sea bg-fixed">
 
 					<!-- image - start -->
-					<img src="{{ vich_uploader_asset(img, 'imageFile') | imagine_filter('index') }}" loading="lazy" alt="{{img.imageName}}" class="w-full h-full object-cover object-center absolute inset-0"/>
-					<!-- image - end -->
+					<img src="{{ vich_uploader_asset(img, 'imageFile') | imagine_filter('index') }}" loading="lazy" alt="{{img.imageName}}" class="w-full h-full object-cover object-center absolute inset-0"/><!-- image - end -->
 
 					<!-- overlay - start --><div class="bg-gray-500  mix-blend-multiply absolute inset-0"> </div>
 					<!-- overlay - end -->
@@ -57,4 +56,16 @@
 		</div>
 	</div>
 	<!-- gallery - end -->
+
+
+<!-- Last tree images -->
+	{# <div class="flex items-center justify-center flex-row w-full">
+			{% for slide in slides %}
+				<div class="w-2/3 p-1 md:p-2">
+					<img alt="{{slide.imageName}}" class="block object-cover object-center w-full h-full rounded-lg" src="{{ vich_uploader_asset(slide, 'imageFile')| imagine_filter('miniature') }}">
+				</div>
+			{% endfor %}
+		</div> #}
+
+
 {% endblock %}
