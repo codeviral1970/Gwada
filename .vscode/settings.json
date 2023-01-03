@@ -1,0 +1,10 @@
+{
+    "editor.autoIndent": "advanced",
+    "editor.formatOnSave": true,
+    "editor.formatOnPaste": true,
+    "editor.minimap.maxColumn": 80,
+    "editor.fontSize": 14,
+    "files.autoSave": "onFocusChange",
+    "editor.tabSize": 2,
+    "editor.wordWrap": "on"
+}
