@@ -23,7 +23,6 @@ class SitemapController extends AbstractController
         $urls[] = ['loc' => $this->generateUrl('app_services')];
         $urls[] = ['loc' => $this->generateUrl('app_contact')];
         $urls[] = ['loc' => $this->generateUrl('app_faq')];
-        //$urls[] = ['loc' => $this->generateUrl('app_services_show')];
         
         foreach($servicesRepository->findAll() as $services)
         {
