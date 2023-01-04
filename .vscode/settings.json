@@ -18,5 +18,10 @@
     "editor.find.cursorMoveOnType": false,
     "editor.find.loop": false,
     "emmet.triggerExpansionOnTab": true,
-    "files.associations": {"*html": "html"},
+    "files.associations": {
+        "*html": "html"
+    },
+    "window.zoomLevel": 3,
+    "editor.defaultFormatter": "solnurkarim.html-to-css-autocompletion",
+    "editor.defaultFoldingRangeProvider": "solnurkarim.html-to-css-autocompletion",
 }
