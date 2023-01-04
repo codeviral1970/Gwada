@@ -95,6 +95,7 @@ class HomeController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $contact = $form->getData();
             $manager->persist($contact);
+            
             $manager->flush();
 
             // dd($contact);
