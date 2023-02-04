@@ -21,7 +21,7 @@
     "files.associations": {
         "*html": "html"
     },
-    "window.zoomLevel": 3,
+    "window.zoomLevel": 1,
     "editor.defaultFormatter": "solnurkarim.html-to-css-autocompletion",
     "editor.defaultFoldingRangeProvider": "solnurkarim.html-to-css-autocompletion",
 }

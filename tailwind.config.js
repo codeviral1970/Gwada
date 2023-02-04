@@ -21,6 +21,10 @@ module.exports = {
       },
       backgroundImage: {
         'sea': 'src("./build/images/bg1.jpg")'
+      },
+      padding: {
+        'px-9' : '2.25rem',
+        'px-10' : '2.5rem'
       }
     },
   },
