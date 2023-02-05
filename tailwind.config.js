@@ -14,7 +14,7 @@ module.exports = {
         'secondary': '#9191A4',
         'badge': '#3F3F51',
         'input-border': '#015450',
-        'input': '#2A2A35'
+        'theme-color': '#0EA5E9'
       },
       fontFamily: {
         'poppins': ["'poppins'", 'sans-serif']
