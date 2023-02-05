@@ -5,7 +5,7 @@
 		<a href="{{path('app_home')}}" class="flex" aria-label="Page d'accueil du portfolio">
 			<span aria-hidden="true" class="text-lg lg:text-xl">
 				<strong>GWADA
-					<span class="text-rose-600">EXCURSION</span>
+					<span class="text-theme-color">EXCURSION</span>
 				</strong>
 			</span>
 		</a>
@@ -14,21 +14,20 @@
 		</button>
 		{% set current_path = app.request.get('_route') %}
 		<ul id="toggled-menu" class="w-full absolute top-full left-0 -translate-y-full -z-10 text-gray-800 border-b border-gray-200 flex flex-col items-center md:static md:z-10 md:w-min md:transform-none md:border-none md:flex-row bg-white">
-			<li class="py-4 md:py-0 md:mr-6 {% if current_path == 'app_home' %} text-rose-600 {% endif %}">
-				<a href="{{path('app_home')}}" class="text-sm uppercase font-semibold w-full hover:text-rose-600">Accueil
+			<li class="py-4 md:py-0 md:mr-6 {% if current_path == 'app_home' %} text-theme-color {% endif %}">
+				<a href="{{path('app_home')}}" class="text-sm uppercase font-semibold w-full hover:text-theme-color">Accueil
 				</a>
 			</li>
-			<li class="py-2 md:py-0 md:mr-6 {% if current_path == 'app_about' %} text-rose-600 {% endif %}">
-
-				<a href="{{path('app_about')}}" class="text-sm uppercase font-semibold w-full hover:text-rose-600">Gwada
+			<li class="py-2 md:py-0 md:mr-6 {% if current_path == 'app_about' %} text-theme-color {% endif %}">
+				<a href="{{path('app_about')}}" class="text-sm uppercase font-semibold w-full hover:text-theme-color">Gwada
 				</a>
 			</li>
-			<li class="py-4 md:py-0 md:mr-6 {% if current_path == 'app_services' %} text-rose-600 {% endif %}">
-				<a href="{{path('app_services')}}" class="text-sm uppercase font-semibold w-full hover:text-rose-600">Activites
+			<li class="py-4 md:py-0 md:mr-6 {% if current_path == 'app_services' %} text-theme-color {% endif %}">
+				<a href="{{path('app_services')}}" class="text-sm uppercase font-semibold w-full hover:text-theme-color">Activites
 				</a>
 			</li>
-			<li class="py-4 md:py-0 {% if current_path == 'app_contact' %} text-rose-600 {% endif %}">
-				<a href="{{path('app_contact')}}" class="text-sm uppercase font-semibold w-full hover:text-rose-600">Contact
+			<li class="py-4 md:py-0 {% if current_path == 'app_contact' %} text-theme-color {% endif %}">
+				<a href="{{path('app_contact')}}" class="text-sm uppercase font-semibold w-full hover:text-theme-color">Contact
 				</a>
 			</li>
 		</ul>

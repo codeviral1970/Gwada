@@ -10,17 +10,19 @@ module.exports = {
       colors: {
         'body': '#17171F',
         'primary-text': '#015450',
-        'theme': '#FAC748',
+        'theme': '#0EA5E9',
         'secondary': '#9191A4',
         'badge': '#3F3F51',
         'input-border': '#015450',
-        'input': '#2A2A35'
+        'theme-color': '#0EA5E9'
       },
       fontFamily: {
         'poppins': ["'poppins'", 'sans-serif']
       },
       backgroundImage: {
-        'sea': 'src("./build/images/bg1.jpg")'
+        'sea': 'url("/public/images/bg/bg-1.jpg")',
+        'hero': "url('/public/images/bg/bg-2.jpg')",
+
       },
       padding: {
         'px-9' : '2.25rem',
