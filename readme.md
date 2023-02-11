@@ -16,6 +16,8 @@ Je viens de faire une suppéssion d'un block via vim
 
 cc Supprime la ligne com
 
+Je vais ajouter une ligne dans test A
+
 
 
 
