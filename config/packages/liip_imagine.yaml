@@ -31,3 +31,11 @@ liip_imagine:
                 fixed:
                     width: 525
                     height: 228
+
+        best:
+            quality: 80
+            filters:
+                #thumbnail: { size: [800, 600], mode: outbound }
+                fixed:
+                    width: 382
+                    height: 250
