@@ -20,7 +20,9 @@ module.exports = {
         'poppins': ["'poppins'", 'sans-serif']
       },
       backgroundImage: {
-        'sea': 'src("./build/images/bg1.jpg")'
+        'sea': 'url("/public/images/bg/bg-1.jpg")',
+        'hero': "url('/public/images/bg/bg-2.jpg')",
+
       },
       padding: {
         'px-9' : '2.25rem',
