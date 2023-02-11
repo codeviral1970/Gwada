@@ -10,6 +10,7 @@
         <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('build/images/favicon-32x32.png') }}">
         <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('build/images/favicon-16x16.png') }}">
         {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
+        <link rel="stylesheet" href="{{asset('bundles/chcookieconsent/css/cookie_consent.css')}}">
         {% block stylesheets %}
             {{ encore_entry_link_tags('app') }}
         {% endblock %}
@@ -22,5 +23,6 @@
         {% include "components/_nav.html.twig" %}
 		{% block body %}{% endblock %}
 		{% include "components/_footer.html.twig" %}
+        {{ render_esi(path('ch_cookie_consent.show_if_cookie_consent_not_set', { 'locale' : 'fr' })) }}
     </body>
 </html>
