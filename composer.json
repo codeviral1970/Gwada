@@ -7,6 +7,7 @@
         "php": ">=8.0.2",
         "ext-ctype": "*",
         "ext-iconv": "*",
+        "artgris/maintenance-bundle": "^1.2",
         "connectholland/cookie-consent-bundle": "^0.11.0",
         "doctrine/annotations": "^1.0",
         "doctrine/doctrine-bundle": "^2.8",
@@ -81,12 +82,17 @@
         "symfony/polyfill-php80": "*"
     },
     "scripts": {
+        "mail:install": "cd .mails && npm install",
+        "mail:build": "cd .mails && npm run build",
+        "mail:dev": "cd .mails && npm run dev",
         "auto-scripts": {
             "cache:clear": "symfony-cmd",
             "assets:install %PUBLIC_DIR%": "symfony-cmd"
         },
         "post-install-cmd": [
-            "@auto-scripts"
+            "@auto-scripts",
+            "@mail:install",
+            "@mail:build"
         ],
         "post-update-cmd": [
             "@auto-scripts"
