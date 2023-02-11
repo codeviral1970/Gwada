@@ -5,11 +5,11 @@
 {% endblock %}
 
 {% block body %}
-	<div>
-		<div class="text-center">
-			<h1 class="font-bold uppercase text-theme-color sm:text-4xl mt-10 text-xl">{{services.name}}</h1>
-		</div>
+
+	<div class="text-center">
+		<h1 class="font-bold uppercase text-theme-color sm:text-4xl mt-10 text-xl">{{services.name}}</h1>
 	</div>
+
 	<div class="bg-white py-6 sm:py-8 lg:py-12">
 		<div class="max-w-screen-xl px-4 md:px-8 mx-auto">
 			<div class="grid md:grid-cols-2 gap-8 lg:gap-12">
@@ -88,9 +88,14 @@
 
 
  <!-- Formule -->
+ {% if services.formules %}
 	<div class="bg-slate-50 py-6 sm:py-8 lg:py-12">
 		<div class="max-w-screen-xl px-4 md:px-8 mx-auto">
-			<h2 class="text-gray-800 text-2xl lg:text-3xl font-bold text-center mb-4 md:mb-8 xl:mb-12">Nos formules</h2>
+			{% for formule in services.formules %}
+				{% if formule %}
+				<h2 class="text-gray-800 text-2xl lg:text-3xl font-bold text-center mb-4 md:mb-8 xl:mb-12">Nos formules</h2>
+				{% endif %}
+			{% endfor %}
 			<div
 				class="grid lg:grid-cols-4 sm:grid-cols-2 gap-4 mb-4 md:mb-6">
 				<!-- plan - start -->
@@ -122,4 +127,5 @@
 			</div>
 		</div>
 	</div>
+{% endif %}
 {% endblock %}
