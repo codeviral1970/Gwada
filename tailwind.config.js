@@ -9,11 +9,11 @@ module.exports = {
     extend: {
       colors: {
         'body': '#17171F',
-        'primary-text': '#015450',
+        'primary': '#6B7280',
         'theme': '#0EA5E9',
         'secondary': '#9191A4',
         'badge': '#3F3F51',
-        'input-border': '#015450',
+        'input-border': '#1F2421',
         'theme-color': '#0EA5E9'
       },
       fontFamily: {

@@ -23,3 +23,19 @@ liip_imagine:
                 #thumbnail: { size: [800, 600], mode: outbound }
                 scale:
                     to: 0.4
+        
+        slide:
+            quality: 80
+            filters:
+                #thumbnail: { size: [800, 600], mode: outbound }
+                fixed:
+                    width: 525
+                    height: 228
+
+        best:
+            quality: 80
+            filters:
+                #thumbnail: { size: [800, 600], mode: outbound }
+                fixed:
+                    width: 382
+                    height: 250
