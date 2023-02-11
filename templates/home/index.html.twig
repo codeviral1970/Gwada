@@ -42,7 +42,6 @@
 	<!-- gallery - start -->
 	<div class="bg-white sm:py-8 lg:py-12">
 		<div class="max-w-screen-2xl px-4 md:px-8 mx-auto">
-
 			{% for home in homes %}
 				<div class="mb-10">
 					<h2 class="text-theme-color text-2xl lg:text-3xl font-bold text-center mb-4 md:mb-8 xl:mb-12">{{home.title}}</h2>
@@ -54,18 +53,9 @@
 			{% include "components/_excursion.html.twig" %}
 		</div>
 	</div>
-	<!-- gallery - end -->
+	<div class="bg-gray-200">
 	{% include "components/_card.html.twig" %}
-
-
-<!-- Last tree images -->
-	{# <div class="flex items-center justify-center flex-row w-full">
-			{% for slide in slides %}
-				<div class="w-2/3 p-1 md:p-2">
-					<img alt="{{slide.imageName}}" class="block object-cover object-center w-full h-full rounded-lg" src="{{ vich_uploader_asset(slide, 'imageFile')| imagine_filter('miniature') }}">
-				</div>
-			{% endfor %}
-		</div> #}
-
+	</div>
+	<!-- gallery - end -->
 
 {% endblock %}
