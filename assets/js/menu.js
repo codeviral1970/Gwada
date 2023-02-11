@@ -22,10 +22,16 @@ function toggleNav() {
 
 setTimeout(() => {
   const success = document.getElementById('success-message');
-  success.style.visibility = 'hidden';
+  if (success)
+  { 
+    success.hidden = true;
+  }
 }, 4000);
 
 setTimeout(() => {
   const alert = document.getElementById('alert');
-  alert.style.display = 'none';
+  if (alert)
+  {
+    alert.hidden = true;  
+  }
 }, 5000);
