@@ -18,6 +18,8 @@ cc Supprime la ligne com
 
 Je vais ajouter une ligne dans test A
 
+Je viens de comprendre le push avec deux branch feature a partir de la branch dev
 
+il faut faire
 
-
+> git push origin testB:develop et faire un git pull de develop par la suite
