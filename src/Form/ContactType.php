@@ -13,58 +13,58 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 
 class ContactType extends AbstractType
 {
-    public function buildForm(FormBuilderInterface $builder, array $options): void
-    {
-        $builder
-          ->add('firstName', TextType::class, [
-            'label' => 'Votre prénom',
-            'label_attr' => [
-              'class' => 'inline-block text-gray-500 text-sm sm:text-base mb-2',
-            ],
-            'attr' => ['class' => 'w-full bg-gray-50 text-gray-500 border focus:ring ring-indigo-300 rounded outline-none transition duration-100 px-3 py-2'],
-          ])
-          ->add('lastName', TextType::class, [
-            'label' => 'Votre nom',
-            'label_attr' => [
-              'class' => 'inline-block text-gray-500 text-sm sm:text-base mb-2',
-            ],
-            'attr' => ['class' => 'w-full bg-gray-50 text-gray-500 border border-gray-500 focus:ring ring-indigo-300 rounded outline-none transition duration-100 px-3 py-2'],
-          ])
-          ->add('email', EmailType::class, [
-            'label' => 'Votre email',
-            'label_attr' => [
-              'class' => 'inline-block text-gray-500 text-sm sm:text-base mb-2',
-            ],
-            'attr' => ['class' => 'w-full bg-gray-50 text-gray-500 border focus:ring ring-indigo-300 rounded outline-none transition duration-100 px-3 py-2'],
-          ])
-          ->add('subject', TextType::class, [
-            'label' => 'Sujet',
-            'label_attr' => [
-              'class' => 'inline-block text-gray-500 text-sm sm:text-base mb-2',
-            ],
-            'attr' => ['class' => 'w-full bg-gray-50 text-gray-500 border focus:ring ring-indigo-300 rounded outline-none transition duration-100 px-3 py-2'],
-          ])
-          ->add('message', TextareaType::class, [
-            'label' => 'Message',
-            'label_attr' => [
-              'class' => 'inline-block text-gray-500 text-sm sm:text-base mb-2',
-            ],
-            'attr' => [
-              'class' => 'w-full h-64 bg-gray-50 text-gray-500 border focus:ring ring-indigo-300 rounded outline-none transition duration-100 px-3 py-2',
-            ],
-          ])
-          ->add('submit', SubmitType::class, [
-            'label' => 'Envoyer',
-            'attr' => [
-              'class' => 'inline-block bg-theme-color hover:bg-theme-color active:bg-theme-color focus-visible:ring ring-theme-color text-white text-sm md:text-base font-semibold text-center rounded-lg outline-none transition duration-100 px-8 py-3 mt-6',
-            ],
-          ]);
-    }
+  public function buildForm(FormBuilderInterface $builder, array $options): void
+  {
+    $builder
+      ->add('firstName', TextType::class, [
+        'label' => 'Votre prénom',
+        'label_attr' => [
+          'class' => 'inline-block text-gray-500 text-sm sm:text-base mb-2',
+        ],
+        'attr' => ['class' => 'w-full bg-gray-50 text-gray-500 border focus:ring ring-indigo-300 rounded outline-none transition duration-100 px-3 py-2'],
+      ])
+      ->add('lastName', TextType::class, [
+        'label' => 'Votre nom',
+        'label_attr' => [
+          'class' => 'inline-block text-gray-500 text-sm sm:text-base mb-2',
+        ],
+        'attr' => ['class' => 'w-full bg-gray-50 text-gray-500 border border-gray-500 focus:ring ring-indigo-300 rounded outline-none transition duration-100 px-3 py-2'],
+      ])
+      ->add('email', EmailType::class, [
+        'label' => 'Votre email',
+        'label_attr' => [
+          'class' => 'inline-block text-gray-500 text-sm sm:text-base mb-2',
+        ],
+        'attr' => ['class' => 'w-full bg-gray-50 text-gray-500 border focus:ring ring-indigo-300 rounded outline-none transition duration-100 px-3 py-2'],
+      ])
+      ->add('subject', TextType::class, [
+        'label' => 'Sujet',
+        'label_attr' => [
+          'class' => 'inline-block text-gray-500 text-sm sm:text-base mb-2',
+        ],
+        'attr' => ['class' => 'w-full bg-gray-50 text-gray-500 border focus:ring ring-indigo-300 rounded outline-none transition duration-100 px-3 py-2'],
+      ])
+      ->add('message', TextareaType::class, [
+        'label' => 'Message',
+        'label_attr' => [
+          'class' => 'inline-block text-gray-500 text-sm sm:text-base mb-2',
+        ],
+        'attr' => [
+          'class' => 'w-full h-64 bg-gray-50 text-gray-500 border focus:ring ring-indigo-300 rounded outline-none transition duration-100 px-3 py-2',
+        ],
+      ])
+      ->add('submit', SubmitType::class, [
+        'label' => 'Envoyer',
+        'attr' => [
+          'class' => 'inline-block bg-hippie hover:bg-neptune focus-visible:ring ring-theme-color text-white text-sm md:text-base font-semibold text-center rounded-lg outline-none transition duration-100 px-8 py-3 mt-6',
+        ],
+      ]);
+  }
 
-    public function configureOptions(OptionsResolver $resolver): void
-    {
-        $resolver->setDefaults([
-          'data_class' => Contact::class,
-        ]);
-    }
+  public function configureOptions(OptionsResolver $resolver): void
+  {
+    $resolver->setDefaults([
+      'data_class' => Contact::class,
+    ]);
+  }
 }
