@@ -37,7 +37,7 @@ yarn-error.log
 /public/media/cache/
 ###< liip/imagine-bundle ###
 
-/public/images/
+public/images/*
 !/public/build/
 
 .vscode/*
