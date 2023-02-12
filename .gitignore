@@ -21,6 +21,7 @@
 
 ###> symfony/webpack-encore-bundle ###
 /node_modules/
+mails/node_modules/*.*
 /public/build/
 npm-debug.log
 yarn-error.log
@@ -37,4 +38,4 @@ yarn-error.log
 
 /public/images
 
-.vscode
+vscode
