@@ -19,11 +19,6 @@ module.exports = {
       fontFamily: {
         'poppins': ["'poppins'", 'sans-serif']
       },
-      backgroundImage: {
-        'sea': 'url("/public/images/bg/bg-1.jpg")',
-        'hero': "url('/public/images/bg/bg-2.jpg')",
-
-      },
       padding: {
         'px-9' : '2.25rem',
         'px-10' : '2.5rem'
