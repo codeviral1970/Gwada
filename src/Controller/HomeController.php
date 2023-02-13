@@ -18,6 +18,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Mailer\MailerInterface;
 use Symfony\Component\Routing\Annotation\Route;
 
+
 class HomeController extends AbstractController
 {
   public function __construct(private EntityManagerInterface $em)
@@ -98,15 +99,17 @@ class HomeController extends AbstractController
       $contact = $form->getData();
       $manager->persist($contact);
 
+      $adresse = $contact->getEmail();
+
       $email = (new TemplatedEmail())
-        ->from('contact@constact.fr')
-        ->to('contact@constact.fr')
+        ->from('contact@test.gwadaexcursion.fr')
+        ->to('contact@test.gwadaexcursion.fr')
         ->subject($contact->getSubject())
         ->htmlTemplate('emails/mail.html')
         ->context([
           'prenom' => $contact->getFirstName(),
           'nom' => $contact->getLastName(),
-          'contact' => $contact->getEmail(),
+          'contact' => $adresse,
           'subject' => $contact->getSubject(),
           'message' => $contact->getMessage()
         ]);
