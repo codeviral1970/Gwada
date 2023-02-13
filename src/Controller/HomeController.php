@@ -100,10 +100,10 @@ class HomeController extends AbstractController
       $manager->persist($contact);
 
       $email = (new TemplatedEmail())
-        ->from('contact@gwadaexcursion.fr')
-        ->to($contact->getEmail())
-        // ->from($contact->getEmail())
-        // ->to('contact@constact.fr')
+        // ->from('contact@gwadaexcursion.fr')
+        // ->to($contact->getEmail())
+        ->from($contact->getEmail())
+        ->to('contact@constact.fr')
         ->subject($contact->getSubject())
         ->htmlTemplate('emails/mail.html')
         ->context([
