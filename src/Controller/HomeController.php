@@ -95,7 +95,6 @@ class HomeController extends AbstractController
     $message = null;
 
     if ($form->isSubmitted() && $form->isValid()) {
-      dump('VALID');
       $contact = $form->getData();
       $manager->persist($contact);
 
