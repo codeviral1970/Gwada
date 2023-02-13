@@ -99,8 +99,6 @@ class HomeController extends AbstractController
       $manager->persist($contact);
 
       $email = (new TemplatedEmail())
-        // ->from('contact@gwadaexcursion.fr')
-        // ->to($contact->getEmail())
         ->from('contact@constact.fr')
         ->to('contact@constact.fr')
         ->subject($contact->getSubject())
@@ -108,7 +106,7 @@ class HomeController extends AbstractController
         ->context([
           'prenom' => $contact->getFirstName(),
           'nom' => $contact->getLastName(),
-          'email' => $contact->getEmail(),
+          'contact' => $contact->getEmail(),
           'subject' => $contact->getSubject(),
           'message' => $contact->getMessage()
         ]);
