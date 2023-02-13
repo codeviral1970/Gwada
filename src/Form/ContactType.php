@@ -10,6 +10,7 @@ use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Validator\Constraints as Assert;
 
 class ContactType extends AbstractType
 {
@@ -18,45 +19,63 @@ class ContactType extends AbstractType
     $builder
       ->add('firstName', TextType::class, [
         'label' => 'Votre prénom',
-        'label_attr' => [
-          'class' => 'inline-block text-gray-500 text-sm sm:text-base mb-2',
-        ],
-        'attr' => ['class' => 'w-full bg-gray-50 text-gray-500 border focus:ring ring-indigo-300 rounded outline-none transition duration-100 px-3 py-2'],
+        'constraints' => [
+          new Assert\Length([
+            'min' => 2,
+            'minMessage' => "Minimum 2 caractères",
+            'max' => 50,
+            'maxMessage' => "Maximum 50 caractères",
+          ]),
+          new Assert\NotBlank([
+            'message' => 'Ce champs ne peut être vide'
+          ])
+        ]
       ])
       ->add('lastName', TextType::class, [
         'label' => 'Votre nom',
-        'label_attr' => [
-          'class' => 'inline-block text-gray-500 text-sm sm:text-base mb-2',
-        ],
-        'attr' => ['class' => 'w-full bg-gray-50 text-gray-500 border border-gray-500 focus:ring ring-indigo-300 rounded outline-none transition duration-100 px-3 py-2'],
+        'constraints' => [
+          new Assert\Length([
+            'min' => 2,
+            'minMessage' => "Minimum 2 caractères",
+            'max' => 50,
+            'maxMessage' => "Maximum 50 caractères",
+          ]),
+          new Assert\NotBlank([
+            'message' => 'Ce champs ne peut être vide'
+          ])
+        ]
       ])
       ->add('email', EmailType::class, [
         'label' => 'Votre email',
-        'label_attr' => [
-          'class' => 'inline-block text-gray-500 text-sm sm:text-base mb-2',
-        ],
-        'attr' => ['class' => 'w-full bg-gray-50 text-gray-500 border focus:ring ring-indigo-300 rounded outline-none transition duration-100 px-3 py-2'],
+        'constraints' => [
+          new Assert\NotBlank([
+            'message' => 'Ce champs ne peut être vide'
+          ]),
+          new Assert\Email([
+            'message' => 'Email invalid'
+          ])
+        ]
       ])
       ->add('subject', TextType::class, [
         'label' => 'Sujet',
-        'label_attr' => [
-          'class' => 'inline-block text-gray-500 text-sm sm:text-base mb-2',
-        ],
-        'attr' => ['class' => 'w-full bg-gray-50 text-gray-500 border focus:ring ring-indigo-300 rounded outline-none transition duration-100 px-3 py-2'],
+        'constraints' => [
+          new Assert\NotBlank([
+            'message' => 'Ce champs ne peut être vide'
+          ])
+        ]
       ])
       ->add('message', TextareaType::class, [
         'label' => 'Message',
-        'label_attr' => [
-          'class' => 'inline-block text-gray-500 text-sm sm:text-base mb-2',
-        ],
-        'attr' => [
-          'class' => 'w-full h-64 bg-gray-50 text-gray-500 border focus:ring ring-indigo-300 rounded outline-none transition duration-100 px-3 py-2',
-        ],
+        'constraints' => [
+          new Assert\NotBlank([
+            'message' => 'Ce champs ne peut être vide'
+          ])
+        ]
       ])
       ->add('submit', SubmitType::class, [
         'label' => 'Envoyer',
         'attr' => [
-          'class' => 'inline-block bg-hippie hover:bg-neptune focus-visible:ring ring-theme-color text-white text-sm md:text-base font-semibold text-center rounded-lg outline-none transition duration-100 px-8 py-3 mt-6',
+          'class' => 'inline-block bg-hippie hover:bg-neptune focus-visible:ring ring-theme-color text-white text-sm md:text-base font-semibold text-center rounded-lg outline-none transition duration-100 px-8 py-3 mt-3',
         ],
       ]);
   }
@@ -65,6 +84,9 @@ class ContactType extends AbstractType
   {
     $resolver->setDefaults([
       'data_class' => Contact::class,
+      'attr' => [
+        'novalidate' => 'novalidate',
+      ]
     ]);
   }
 }

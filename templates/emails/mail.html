@@ -1,4 +1,6 @@
-<!DOCTYPE html>
+<div class="flex h-screen">
+  <div class="m-auto">
+    <!DOCTYPE html>
 <html lang="en" xmlns:v="urn:schemas-microsoft-com:vml">
 <head>
   <meta charset="utf-8">
@@ -34,17 +36,26 @@
 .m-0 {
   margin: 0 !important;
 }
+.m-auto {
+  margin: auto !important;
+}
 .mb-6 {
   margin-bottom: 24px !important;
 }
 .block {
   display: block !important;
 }
+.flex {
+  display: flex !important;
+}
 .table {
   display: table !important;
 }
 .hidden {
   display: none !important;
+}
+.h-screen {
+  height: 100vh !important;
 }
 .w-150 {
   width: 600px !important;
@@ -55,11 +66,11 @@
 .rounded {
   border-radius: 4px !important;
 }
-.bg-sky-200 {
-  background-color: #bae6fd !important;
-}
 .bg-slate-50 {
   background-color: #f8fafc !important;
+}
+.bg-theme {
+  background-color: #5BA1AE !important;
 }
 .p-0 {
   padding: 0 !important;
@@ -85,11 +96,8 @@
 .leading-6 {
   line-height: 24px !important;
 }
-.text-black {
-  color: #000 !important;
-}
-.text-slate-700 {
-  color: #334155 !important;
+.text-secondary {
+  color: #343E31 !important;
 }
 .shadow-sm {
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05) !important;
@@ -130,36 +138,38 @@
 <body class="m-0 p-0 w-full word-break-break-word -webkit-font-smoothing-antialiased bg-slate-50">
   <div role="article" aria-roledescription="email" aria-label="Demande d'information" lang="en">
     
-    <table class="w-full font-sans" cellpadding="0" cellspacing="0" role="presentation">
-      <tr>
-        <td align="center" class="bg-slate-50">
-          <table class="w-150 sm-w-full" cellpadding="0" cellspacing="0" role="presentation">
-            <tr>
-              <td align="center" class="sm-px-6">
-                <table class="w-full" cellpadding="0" cellspacing="0" role="presentation">
-                  <tr>
-                    <td class="p-12 sm-px-6 bg-sky-200 text-slate-700 text-base text-left leading-6 rounded shadow-sm">
-                      <p class="text-2xl sm-leading-8 text-black font-semibold m-0 mb-6">
-                        Sujet : {{subject}}
-                      </p>
-                      <p>
-                        De : {{nom}} {{prenom}} 
-                      </p>
-                      <hr>
-                      <p>
-                       {{message}}
-                      </p>
-                    </td>
-                  </tr>
-                </table>
-              </td>
-            </tr>
-          </table>
-        </td>
-      </tr>
-    </table>
-  
+        <table class="w-full font-sans" cellpadding="0" cellspacing="0" role="presentation">
+          <tr>
+            <td align="center" class="bg-slate-50">
+              <table class="w-150 sm-w-full" cellpadding="0" cellspacing="0" role="presentation">
+                <tr>
+                  <td align="center" class="sm-px-6">
+                    <table class="w-full" cellpadding="0" cellspacing="0" role="presentation">
+                      <tr>
+                        <td class="p-12 sm-px-6 bg-theme text-secondary text-base text-left leading-6 rounded shadow-sm">
+                          <p class="text-2xl sm-leading-8 text-secondary font-semibold m-0 mb-6">
+                            Sujet : {{subject}}
+                          </p>
+                          <p>
+                            De : {{nom}} {{prenom}}
+                          </p>
+                          <hr>
+                          <p>
+                            {{message}}
+                          </p>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+      
   </div>
 </body>
 </html>
 
+  </div>
+</div>

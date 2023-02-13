@@ -95,12 +95,15 @@ class HomeController extends AbstractController
     $message = null;
 
     if ($form->isSubmitted() && $form->isValid()) {
+      dump('VALID');
       $contact = $form->getData();
       $manager->persist($contact);
 
       $email = (new TemplatedEmail())
-        ->from($contact->getEmail())
-        ->to('contact@gwadaexcursion.fr')
+        ->from('contact@gwadaexcursion.fr')
+        ->to($contact->getEmail())
+        // ->from($contact->getEmail())
+        // ->to('contact@constact.fr')
         ->subject($contact->getSubject())
         ->htmlTemplate('emails/mail.html')
         ->context([
