@@ -101,13 +101,14 @@ class HomeController extends AbstractController
       $email = (new TemplatedEmail())
         // ->from('contact@gwadaexcursion.fr')
         // ->to($contact->getEmail())
-        ->from($contact->getEmail())
+        ->from('contact@constact.fr')
         ->to('contact@constact.fr')
         ->subject($contact->getSubject())
         ->htmlTemplate('emails/mail.html')
         ->context([
           'prenom' => $contact->getFirstName(),
           'nom' => $contact->getLastName(),
+          'email' => $contact->getEmail(),
           'subject' => $contact->getSubject(),
           'message' => $contact->getMessage()
         ]);
