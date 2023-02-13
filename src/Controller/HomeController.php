@@ -129,4 +129,10 @@ class HomeController extends AbstractController
   {
     return $this->render('home/faq.html.twig');
   }
+
+  #[Route('/mentions-legales', name: 'app_rgpd')]
+  public function rgpd(): Response
+  {
+    return $this->render('home/cookie.html.twig');
+  }
 }

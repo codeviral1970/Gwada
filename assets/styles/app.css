@@ -7,5 +7,34 @@ input, textarea {
 }
 
 .ch-cookie-consent {
-  background-color: #0aa5e9;
+  background-color: #88BBBC;
+}
+
+.ch-cookie-consent__btn { 
+  background-color: #5BA1AE;
+  border: 1px solid #ffffff;
+  color:#ffffff;
+}
+
+.ch-cookie-consent__category-toggle input:checked + label, .ch-cookie-consent__category-toggle input + label:hover {
+  background-color: #5BA1AE;
+}
+
+#cookie_consent_save{
+  margin-top: 10%;
+}
+
+.map-responsive{
+    overflow:hidden;
+    padding-bottom:56.25%;
+    position:relative;
+    height:0;
+}
+
+.map-responsive iframe{
+    left:0;
+    top:0;
+    height:100%;
+    width:100%;
+    position:absolute;
 }
