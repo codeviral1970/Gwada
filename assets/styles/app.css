@@ -7,18 +7,20 @@ input, textarea {
 }
 
 .ch-cookie-consent {
-  background-color: #88BBBC;
+  background-image: linear-gradient(#22d3ee, #34d399);
 }
 
 .ch-cookie-consent__btn { 
-  background-color: #5BA1AE;
+  background: linear-gradient(90deg, rgba(34,211,238,1) 0%, rgba(52,211,153,1) 48%);
   border: 1px solid #ffffff;
   color:#ffffff;
 }
 
 .ch-cookie-consent__category-toggle input:checked + label, .ch-cookie-consent__category-toggle input + label:hover {
-  background-color: #5BA1AE;
+  background: linear-gradient(#22d3ee, #34d399);
+  border: 1px solid #000;
 }
+
 
 #cookie_consent_save{
   margin-top: 10%;
