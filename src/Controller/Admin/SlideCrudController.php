@@ -32,7 +32,7 @@ class SlideCrudController extends AbstractCrudController
         ->hideOnIndex(),
       ImageField::new('caption', 'Caption')
         ->setBasePath('images/gallery')
-        ->setUploadDir('images/gallery')
+        // ->setUploadDir('images/gallery')
         ->onlyOnIndex(),
 
       AssociationField::new('gallery', 'Activité'),
