@@ -32,13 +32,11 @@ class SlideCrudController extends AbstractCrudController
         ->hideOnIndex(),
       ImageField::new('caption', 'Caption')
         ->setBasePath('images/gallery')
-        // ->setUploadDir('images/gallery')
+        ->setUploadDir('public/images/gallery')
+        ->setUploadedFileNamePattern('[randomhash].[extension]')
         ->onlyOnIndex(),
 
       AssociationField::new('gallery', 'Activité'),
-      // CollectionField::new('caption')
-      //   ->setEntryType(SlideType::class)
-      //    ->onlyOnForms(),
     ];
   }
 

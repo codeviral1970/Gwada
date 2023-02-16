@@ -16,7 +16,7 @@
       <div class="md:pt-1">
         {% if services.slides | length <= 1 %} <div class="w-full bg-gray-100 overflow-hidden rounded-lg shadow-lg">
           <img src="{{ vich_uploader_asset(services) | imagine_filter('show') }}" loading="lazy" alt="{{services.name}}"
-            class="object-center object-cover w-full h-72" />
+            class="object-center object-cover w-full" />
       </div>
       {% else %}
       <div>

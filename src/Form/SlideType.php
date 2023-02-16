@@ -11,19 +11,20 @@ use Vich\UploaderBundle\Form\Type\VichFileType;
 
 class SlideType extends AbstractType
 {
-    public function buildForm(FormBuilderInterface $builder, array $options): void
-    {
-        $builder
-          ->add('imageFile', VichFileType::class, [
-            'label' => 'Fichier',
-          ])
-          ->add('caption', TextType::class);
-    }
+  public function buildForm(FormBuilderInterface $builder, array $options): void
+  {
+    $builder
+      ->add('imageFile', VichFileType::class, [
+        'label' => 'Fichier',
+      ])
+      ->add('caption', TextType::class)
+      ->add('imageName', TextType::class);
+  }
 
-    public function configureOptions(OptionsResolver $resolver): void
-    {
-        $resolver->setDefaults([
-          'data_class' => Slide::class,
-        ]);
-    }
+  public function configureOptions(OptionsResolver $resolver): void
+  {
+    $resolver->setDefaults([
+      'data_class' => Slide::class,
+    ]);
+  }
 }

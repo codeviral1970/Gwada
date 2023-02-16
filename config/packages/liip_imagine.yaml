@@ -13,10 +13,11 @@ liip_imagine:
             filters:
                 thumbnail: { size: [600, 450], mode: outbound }
         show:
-            quality: 50
+            quality: 80
             filters:
-                scale:
-                    to: 1
+                fixed:
+                    width: 525
+                    height: 400
         index:
             quality: 80
             filters:

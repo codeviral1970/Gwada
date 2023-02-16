@@ -3,7 +3,6 @@
 namespace App\Entity;
 
 use App\Repository\SlideRepository;
-use DateTimeImmutable;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\HttpFoundation\File\File;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
@@ -18,8 +17,8 @@ class Slide
   #[ORM\Column]
   private ?int $id = null;
 
-  #[ORM\Column(length: 255,)]
-  private ?string $caption;
+  #[ORM\Column(length: 255, nullable: true)]
+  private ?string $caption = null;
 
   #[ORM\Column(length: 255, nullable: true)]
   private ?string $imageName = null;
@@ -36,10 +35,7 @@ class Slide
 
   public function __construct()
   {
-    $this->caption = 'Image_';
-    $this->updatedAt = new DateTimeImmutable();
-
-    return $this;
+    $this->caption = '';
   }
 
   public function getId(): ?int
@@ -52,9 +48,9 @@ class Slide
     return $this->caption;
   }
 
-  public function setCaption(string $caption): self
+  public function setCaption(?string $caption): self
   {
-    $this->caption = $caption;
+    $this->caption = $caption ?? '';
 
     return $this;
   }
