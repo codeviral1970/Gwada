@@ -75,8 +75,8 @@ class ContactType extends AbstractType
       ->add('submit', SubmitType::class, [
         'label' => 'Envoyer',
         'attr' => [
-          'class' => 'inline-block bg-hippie hover:bg-neptune focus-visible:ring ring-theme-color text-white text-sm md:text-base font-semibold text-center rounded-lg outline-none transition duration-100 px-8 py-3 mt-3',
-        ],
+          'class' => 'btn-gradient'
+        ]
       ]);
   }
 

@@ -5,28 +5,30 @@
 
 {% block body %}
 
-	<div class="py-6 sm:py-8 lg:py-12 ">
-		<div class="max-w-screen-xl px-4 md:px-8 mx-auto">
-			<div class="grid md:grid-cols-2 gap-8 lg:gap-12">
-				{% for about in abouts %}
-					<div class="md:pt-1">
-						<div class="h-64 md:h-auto text-primary overflow-hidden rounded-lg shadow-lg">
-							<img src="{{ vich_uploader_asset(about, 'imageFile') | imagine_filter('about') }}" loading="lazy" alt="{{about.imageName}}" class="w-full h-full object-cover object-center"/>
-						</div>
-					</div>
-					<div class="md:pt-1">
-						<h1 class="text-primary text-2xl sm:text-3xl font-bold text-center md:text-left mb-4 md:mb-6">A propos</h1>
+<div class="py-6 sm:py-8 lg:py-12 ">
+  <div class="max-w-screen-xl px-4 md:px-8 mx-auto">
+    <div class="grid md:grid-cols-2 gap-8 lg:gap-12">
+      {% for about in abouts %}
+      <div class="md:pt-1">
+        <div class="h-64 md:h-auto text-primary overflow-hidden rounded-lg shadow-lg">
+          <img src="{{ vich_uploader_asset(about, 'imageFile') | imagine_filter('about') }}" loading="lazy"
+            alt="{{about.imageName}}" class="w-full h-full object-cover object-center" />
+        </div>
+      </div>
+      <div class="md:pt-1">
+        <h1 class="text-color-gradient text-2xl sm:text-3xl font-bold text-center md:text-left mb-4 md:mb-6">A propos
+        </h1>
 
-						<div class="text-secondary text-lg mb-6 md:mb-8 leading-relaxed">
-							{{about.description |raw}}
-						</div>
-					</div>
-				{% endfor %}
-			</div>
-		</div>
-	</div>
+        <div class="text-secondary text-lg mb-6 md:mb-8 leading-relaxed">
+          {{about.description |raw}}
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
 
-	{# <div class="bg-gray-200">
-	{% include "components/_card.html.twig" %}
-	</div> #}
+{# <div class="bg-gray-200">
+  {% include "components/_card.html.twig" %}
+</div> #}
 {% endblock %}

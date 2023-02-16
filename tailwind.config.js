@@ -34,8 +34,10 @@ module.exports = {
         'poppins': ["'poppins'", 'sans-serif']
       },
       padding: {
-        'px-9' : '2.25rem',
-        'px-10' : '2.5rem'
+        '10': '6rem',
+        '11': '7rem',
+        '12' : '8rem',
+        '40' : '10rem'
       }
     },
   },

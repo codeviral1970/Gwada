@@ -22,14 +22,15 @@ class UserCrudController extends AbstractCrudController
     return [
       IdField::new('id')->hideOnForm()->hideOnIndex(),
       TextField::new('email'),
-      TextField::new('password'),
+      TextField::new('password')->hideOnIndex(),
     ];
   }
 
   public function configureActions(Actions $actions): Actions
   {
     return $actions
-      ->add(Crud::PAGE_INDEX, Action::DETAIL);
+      ->add(Crud::PAGE_INDEX, Action::DETAIL)
+      ->disable(Crud::PAGE_EDIT, Action::DELETE);
   }
 
   public function configureCrud(Crud $crud): Crud

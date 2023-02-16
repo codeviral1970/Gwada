@@ -30,7 +30,7 @@ liip_imagine:
                 #thumbnail: { size: [800, 600], mode: outbound }
                 fixed:
                     width: 525
-                    height: 228
+                    height: 400
 
         best:
             quality: 80
