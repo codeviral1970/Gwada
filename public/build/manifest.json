@@ -1,14 +1,15 @@
 {
-  "build/app.css": "/build/app.css",
-  "build/app.js": "/build/app.js",
-  "build/runtime.js": "/build/runtime.js",
-  "build/vendors-node_modules_symfony_stimulus-bridge_dist_index_js-node_modules_core-js_modules_es_da-9df924.js": "/build/vendors-node_modules_symfony_stimulus-bridge_dist_index_js-node_modules_core-js_modules_es_da-9df924.js",
+  "build/app.css": "/build/app.05b7b5c6.css",
+  "build/app.js": "/build/app.8ad9fef3.js",
+  "build/runtime.js": "/build/runtime.53a95366.js",
+  "build/752.22273c9b.js": "/build/752.22273c9b.js",
   "build/images/android-chrome-512x512.png": "/build/./images/android-chrome-512x512.png",
   "build/images/favicon.ico": "/build/./images/favicon.ico",
   "build/images/android-chrome-192x192.png": "/build/./images/android-chrome-192x192.png",
   "build/images/apple-touch-icon.png": "/build/./images/apple-touch-icon.png",
   "build/images/favicon-32x32.png": "/build/./images/favicon-32x32.png",
   "build/images/favicon-16x16.png": "/build/./images/favicon-16x16.png",
+  "build/images/log-out-outline.svg": "/build/./images/log-out-outline.svg",
   "build/images/cross.svg": "/build/./images/cross.svg",
   "build/images/menu.svg": "/build/./images/menu.svg"
 }

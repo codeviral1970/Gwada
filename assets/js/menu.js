@@ -1,62 +1,18 @@
 (function () {
   'use strict';
 
-  console.log('js run...');
+let menuButton = document.querySelector("#menu-button");
+let menuContainer = document.querySelector("#header-menu");
+let menuButtonClose = document.querySelector("#menu-button-close-icon");
+let menuButtonOpen = document.querySelector("#menu-button-open-icon");
 
-  const toggleMenuBtn = document.querySelector("#menu-btn");
-  const toggleMenuImg = document.querySelector("#menu-btn img");
-  const toggledMenu = document.querySelector("#toggled-menu");
-  const menuLinks = document.querySelector("#main-nav ul a");
+menuButton.addEventListener("click", () => {
+  menuContainer.classList.toggle("hidden");
+  menuButtonOpen.classList.toggle("hidden");
+  menuButtonClose.classList.toggle("hidden");
+  document.body.classList.toggle("menu-shown");
 
-  function toggleNav() {
-    toggledMenu.classList.toggle("-translate-y-full")
-
-    if (toggledMenu.classList.contains("-translate-y-full"))
-    {
-      toggleMenuImg.setAttribute("src", "build/images/menu.svg")
-      toggleMenuBtn.setAttribute("aria-expanded", "false")
-    }
-    else
-    {
-      toggleMenuImg.setAttribute("src", "build/images/cross.svg")
-      toggleMenuBtn.setAttribute("aria-expanded", "true")
-    }
-  }
-
-  toggleMenuBtn.addEventListener("click", toggleNav);
-
-  window.onload = function () {
-
-    toggleMenuBtn.addEventListener("click", toggleNav);
-
-  }
-
-  // function toggleNav() {
-  //   const toggledMenu = document.querySelector("#menu");
-  //   const toggleMenuBtn = document.querySelector("#menu-btn");
-  //   const toggleMenuImg = toggleMenuBtn.querySelector("img");
-
-  //   toggledMenu.classList.toggle("-translate-y-full");
-
-  //   if (toggledMenu.classList.contains("-translate-y-full"))
-  //   {
-  //     toggleMenuImg.setAttribute("src", "build/images/menu.svg");
-  //     toggleMenuBtn.setAttribute("aria-expanded", "false");
-  //   } else
-  //   {
-  //     toggleMenuImg.setAttribute("src", "build/images/cross.svg");
-  //     toggleMenuBtn.setAttribute("aria-expanded", "true");
-  //   }
-  // }
-
-  // const toggleMenuBtn = document.querySelector("#menu-btn");
-  // toggleMenuBtn.addEventListener("click", toggleNav);
-
-
-
-
-
-
+});
 
   setTimeout(() => {
     const success = document.getElementById('success-message');

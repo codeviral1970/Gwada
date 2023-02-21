@@ -1,36 +1,40 @@
-<header class="bg-white z-50 sticky top-0 w-full shadow border-b">
-
-  <nav id="main-nav" class="bg-white max-w-7xl mx-auto font-poppins px-6 py-6 flex items-center justify-between">
-
-    <a href="{{path('app_home')}}" class="flex" aria-label="Page d'accueil du portfolio">
-      <span aria-hidden="true" class="text-lg lg:text-xl">
+<header
+  class="px-6 lg:px-16 py-4 lg:py-6 font-bold sticky left-0 right-0 top-0 z-50 border-t-4 border-athens-gray bg-white">
+  <div class="container mx-auto flex justify-between items-center"><a href="{{path('app_home')}}" target="_self">
+      <div class="text-lg lg:text-xl uppercase ">
         <strong>GWADA
           <span class="text-color-gradient">EXCURSION</span>
         </strong>
-      </span>
+      </div>
     </a>
-    <button aria-label="toggle button" aria-expanded="false" id="menu-btn" class="cursor-pointer w-7 md:hidden">
-      <img src="{{asset('build/images/menu.svg')}}" alt="">
+    <nav id="header-menu"
+      class="ct-div-block hidden lg:flex gap-5 absolute lg:relative top-full left-0 w-full lg:w-auto pb-5 lg:pb-0 px-4 lg:px-0 lg:ml-aut bg-white lg:bg-transparent shadow-md lg:shadow-none uppercase text-sm md:text-lg">
+      <div class="flex flex-col lg:flex-row container mx-auto divide-y-2 lg:divide-y-0 gap-x-8 lg:items-center">
+        {% set current_path = app.request.get('_route') %}
+        <a class="block lg:inline-block py-2 hover:text-text-raven transition {% if current_path == 'app_home' %} text-color-gradient{% endif %}"
+          href="{{ path('app_home') }}">Accueil</a>
+        <a class="block lg:inline-block py-2 uppercase hover:text-text-raven transition {% if current_path == 'app_about' %} text-color-gradient{% endif %}"
+          href="{{ path('app_about') }}">A propos</a>
+        <a class="block lg:inline-block py-2 hover:text-text-raven transition {% if current_path == 'app_services' %} text-color-gradient{% endif %}"
+          href="{{ path('app_services') }}">Activités</a>
+        <a class="block lg:inline-block py-2 hover:text-text-raven transition {% if current_path == 'app_contact' %} text-color-gradient{% endif %}"
+          href="{{ path('app_contact') }}">Contact</a>
+      </div>
+    </nav>
+    <button id="menu-button"
+      class="w-10 h-10 flex items-center justify-center rounded-full hover:text-late-900 transition text-xl lg:hidden"><svg
+        id="menu-button-open-icon" class="fill-current w-4 h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+        width="24" height="24">
+        <path fill="none" d="M0 0h24v24H0z"></path>
+        <path d="M3 4h18v2H3V4zm0 7h18v2H3v-2zm0 7h18v2H3v-2z"></path>
+      </svg>
+      <svg id="menu-button-close-icon" class="fill-current hidden w-5 h-5" xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24" width="24" height="24">
+        <path fill="none" d="M0 0h24v24H0z"></path>
+        <path
+          d="M12 10.586l4.95-4.95 1.414 1.414-4.95 4.95 4.95 4.95-1.414 1.414-4.95-4.95-4.95 4.95-1.414-1.414 4.95-4.95-4.95-4.95L7.05 5.636z">
+        </path>
+      </svg>
     </button>
-    {% set current_path = app.request.get('_route') %}
-    <ul id="toggled-menu"
-      class="w-full absolute top-full left-0 -translate-y-full -z-10 text-gray-800 border-b border-gray-200 flex flex-col items-center md:static md:z-10 md:w-min md:transform-none md:border-none md:flex-row bg-white">
-      <li class="py-4 md:py-0 md:mr-6 {% if current_path == 'app_home' %} text-color-gradient{% endif %}">
-        <a href="{{path('app_home')}}" class="text-sm uppercase font-semibold w-full hover:text-neptune">Accueil
-        </a>
-      </li>
-      <li class="py-2 md:py-0 md:mr-6 {% if current_path == 'app_about' %} text-color-gradient{% endif %}">
-        <a href="{{path('app_about')}}" class="text-sm uppercase font-semibold w-full hover:text-neptune">Gwada
-        </a>
-      </li>
-      <li class="py-4 md:py-0 md:mr-6 {% if current_path == 'app_services' %} text-color-gradient{% endif %}">
-        <a href="{{path('app_services')}}" class="text-sm uppercase font-semibold w-full hover:text-neptune">Activites
-        </a>
-      </li>
-      <li class="py-4 md:py-0 {% if current_path == 'app_contact' %} text-color-gradient{% endif %}">
-        <a href="{{path('app_contact')}}" class="text-sm uppercase font-semibold w-full hover:text-neptune">Contact
-        </a>
-      </li>
-    </ul>
-  </nav>
+  </div>
 </header>
