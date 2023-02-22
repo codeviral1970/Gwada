@@ -5,7 +5,6 @@
         "@hotwired/stimulus": "^3.0.0",
         "@hotwired/turbo": "^7.0.1",
         "@symfony/stimulus-bridge": "^3.2.0",
-        "@symfony/ux-turbo": "file:vendor/symfony/ux-turbo/assets",
         "@symfony/webpack-encore": "^4.0.0",
         "autoprefixer": "^10.4.13",
         "core-js": "^3.23.0",
@@ -28,6 +27,7 @@
         "build": "encore production --progress"
     },
     "dependencies": {
+        "stimulus-use": "^0.52.0",
         "tw-elements": "^1.0.0-alpha13"
     }
 }

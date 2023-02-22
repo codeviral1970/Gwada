@@ -124,12 +124,10 @@ class HomeController extends AbstractController
       return $this->redirectToRoute('app_contact');
     }
 
-    $response = new Response(null, $form->isSubmitted() ? 422 : 200);
-
     return $this->render('home/contact.html.twig', [
       'contactForm' => $form->createView(),
       'contactDescription' => $contactDescription,
-    ], $response);
+    ]);
   }
 
   #[Route('/faqs', name: 'app_faq')]
