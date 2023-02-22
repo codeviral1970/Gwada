@@ -16,6 +16,8 @@
       </div>
     </div>
     {% endfor %}
-    {% include "components/_contactForm.html.twig" %}
+    
+    {% include "components/_contactForm.html.twig" with {form: contactForm} only %}
+    
   </div>
   {% endblock %}

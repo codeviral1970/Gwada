@@ -17,7 +17,8 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Mailer\MailerInterface;
 use Symfony\Component\Routing\Annotation\Route;
-
+use Symfony\UX\Turbo\Stream\TurboStreamResponse;
+use Symfony\UX\Turbo\TurboBundle;
 
 class HomeController extends AbstractController
 {
@@ -115,6 +116,7 @@ class HomeController extends AbstractController
         ]);
 
       $mailer->send($email);
+
       $manager->flush();
 
       $this->addFlash('success', 'Votre message à bien été envoyé');
@@ -122,10 +124,12 @@ class HomeController extends AbstractController
       return $this->redirectToRoute('app_contact');
     }
 
+    $response = new Response(null, $form->isSubmitted() ? 422 : 200);
+
     return $this->render('home/contact.html.twig', [
-      'form' => $form->createView(),
+      'contactForm' => $form->createView(),
       'contactDescription' => $contactDescription,
-    ]);
+    ], $response);
   }
 
   #[Route('/faqs', name: 'app_faq')]
