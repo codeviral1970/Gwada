@@ -1,6 +1,3 @@
-(function () {
-  'use strict';
-
 let menuButton = document.querySelector("#menu-button");
 let menuContainer = document.querySelector("#header-menu");
 let menuButtonClose = document.querySelector("#menu-button-close-icon");
@@ -29,4 +26,4 @@ menuButton.addEventListener("click", () => {
       alert.hidden = true;
     }
   }, 5000);
-})();
+
