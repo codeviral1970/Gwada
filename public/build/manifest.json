@@ -11,5 +11,6 @@
   "build/images/favicon-16x16.png": "/build/./images/favicon-16x16.png",
   "build/images/log-out-outline.svg": "/build/./images/log-out-outline.svg",
   "build/images/cross.svg": "/build/./images/cross.svg",
-  "build/images/menu.svg": "/build/./images/menu.svg"
+  "build/images/menu.svg": "/build/./images/menu.svg",
+  "build/vendors-node_modules_symfony_stimulus-bridge_dist_index_js-node_modules_core-js_modules_es_da-9df924.js": "/build/vendors-node_modules_symfony_stimulus-bridge_dist_index_js-node_modules_core-js_modules_es_da-9df924.js"
 }
