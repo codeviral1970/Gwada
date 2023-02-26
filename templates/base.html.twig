@@ -23,7 +23,7 @@
 
   </head>
 
-  <body class="flex flex-col min-h-screen mx-auto">
+  <body class="flex flex-col min-h-screen mx-auto text-skin-base">
     {% include "components/_nav.html.twig" %}
     {% block body %}{% endblock %}
     {{ render_esi(path('ch_cookie_consent.show_if_cookie_consent_not_set', { 'locale' : 'fr' })) }}
