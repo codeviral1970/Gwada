@@ -30,8 +30,10 @@ class HomeController extends AbstractController
   public function index(
     ServicesRepository $services,
     HomeRepository $home,
-    SlideRepository $slide
+    SlideRepository $slide,
+    Request $request
   ): Response {
+
     $services = $services->findAll();
     $bestServices = $this->em->getRepository(Services::class)->findByIsBest(1);
     $homes = $home->findAll();
@@ -124,10 +126,12 @@ class HomeController extends AbstractController
       return $this->redirectToRoute('app_contact');
     }
 
+    $response = new Response(null, $form->isSubmitted() ? 422 : 200);
+
     return $this->render('home/contact.html.twig', [
       'contactForm' => $form->createView(),
       'contactDescription' => $contactDescription,
-    ]);
+    ], $response);
   }
 
   #[Route('/faqs', name: 'app_faq')]

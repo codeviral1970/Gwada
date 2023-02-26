@@ -7,6 +7,12 @@ module.exports = {
   ],
   theme: {
     extend: {
+      textColor: {
+        skin: {
+          base: 'var(--color-text-base)',
+          muted: 'var(--color-text-muted)'
+        }
+      },
       colors: {
         'body': '#17171F',
         'theme': '#5BA1AE',

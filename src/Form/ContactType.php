@@ -27,7 +27,7 @@ class ContactType extends AbstractType
             'maxMessage' => "Maximum 50 caractères",
           ]),
           new Assert\NotBlank([
-            'message' => 'Ce champs ne peut être vide'
+            'message' => 'Merci de renseigner votre prénom'
           ])
         ]
       ])
@@ -41,7 +41,7 @@ class ContactType extends AbstractType
             'maxMessage' => "Maximum 50 caractères",
           ]),
           new Assert\NotBlank([
-            'message' => 'Ce champs ne peut être vide'
+            'message' => 'Merci de renseigner votre nom'
           ])
         ]
       ])
@@ -49,7 +49,7 @@ class ContactType extends AbstractType
         'label' => 'Votre email',
         'constraints' => [
           new Assert\NotBlank([
-            'message' => 'Ce champs ne peut être vide'
+            'message' => 'Merci de renseigner votre email'
           ]),
           new Assert\Email([
             'message' => 'Email invalid'
@@ -60,7 +60,7 @@ class ContactType extends AbstractType
         'label' => 'Sujet',
         'constraints' => [
           new Assert\NotBlank([
-            'message' => 'Ce champs ne peut être vide'
+            'message' => 'Merci de renseigner le sujet'
           ])
         ]
       ])
@@ -68,7 +68,7 @@ class ContactType extends AbstractType
         'label' => 'Message',
         'constraints' => [
           new Assert\NotBlank([
-            'message' => 'Ce champs ne peut être vide'
+            'message' => 'Merci de faire une description'
           ])
         ]
       ])

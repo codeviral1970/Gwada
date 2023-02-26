@@ -2,6 +2,14 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
+
+@layer base {
+  :root {
+    --color-text-base: #17171F;
+    --color-text-muted: #343E31;
+  }
+}
+
 input, textarea {
   border-color: black;
 }
@@ -54,7 +62,7 @@ input, textarea {
 }
 
 .btn-gradient {
-  @apply inline-block w-auto mt-4 px-6 py-2 bg-gradient-to-r from-cyan-400 to-emerald-400 rounded-md shadow-md text-sm font-bold text-white;
+  @apply inline-block w-auto mt-4 px-6 py-2 bg-gradient-to-r from-cyan-400 to-emerald-400 hover:from-cyan-600 to-emerald-500 rounded-md shadow-md text-sm font-bold text-white;
 }
 
 .text-color-gradient {
