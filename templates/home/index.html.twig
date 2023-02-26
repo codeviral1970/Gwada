@@ -17,17 +17,16 @@
         class="w-full h-full object-cover object-center absolute inset-0" /><!-- image - end -->
 
       <!-- overlay - start -->
-      <div class="bg-gray-500  mix-blend-multiply absolute inset-0"> </div>
+      <div class="bg-gray-500 mix-blend-multiply absolute inset-0"> </div>
       <!-- overlay - end -->
 
       <!-- text start -->
       <div class="sm:max-w-xl flex flex-col items-center relative">
 
-        <h1 class="text-white lg:text-4xl sm:text-2xl md:text-4xl font-bold text-center mb-8 md:mb-12 shadow-sm">
+        <h1 class="text-white text-2xl md:text-4xl font-bold text-center mb-8 md:mb-12 shadow-sm">
           GWADA
           <span class="text-color-gradient">EXCURSION</span>
         </h1>
-        {# <h1 class="text-5xl font-bold mt-0 mb-6">GWADA EXCURSION</h1> #}
         <p class="text-tertiary text-lg sm:text-xl text-center mb-4 md:mb-8">Partez explorer la Guadeloupe clé en main
         </p>
 
@@ -43,27 +42,27 @@
 </div>
 <!-- hero - end -->
 
+
 <!-- gallery - start -->
-<div class="">
-  <div class="max-w-screen-xl px-4 md:px-6 mx-auto">
+<div class="max-w-6xl mx-auto">
+  <div class="">
     {% for home in homes %}
     <div class="mb-10">
       <h2 class="text-color-gradient text-2xl lg:text-3xl font-bold text-center mb-4 md:mb-8 xl:mb-12">{{home.title}}
       </h2>
 
-      <div class="p-2 text-lg text-secondary">{{home.description | raw}}</div>
+      <div class="p-4 text-lg text-secondary">{{home.description | raw}}</div>
     </div>
     {% endfor %}
 
     {% include "components/_excursion.html.twig" %}
   </div>
-  <div class="max-w-screen-xl px-4 md:px-6 mx-auto">
+  <div class="max-w-screen-xl mx-auto">
     <div class="md:px-4 py-6 ">
       {% include "components/_card.html.twig" %}
     </div>
   </div>
 </div>
-
 
 <!-- gallery - end -->
 

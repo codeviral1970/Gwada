@@ -1,0 +1,33 @@
+<!-- Formule -->
+<div class="w-full bg-slate-50 py-6 sm:py-8">
+  <div class="max-w-6xl mx-auto px-4">
+    <h2 class="text-color-gradient text-2xl lg:text-3xl font-bold text-center mb-4 md:mb-8 xl:mb-12">Nos formules</h2>
+    <div class="grid lg:grid-cols-4 sm:grid-cols-2 gap-4 mb-4 md:mb-6">
+      <!-- plan - start -->
+      {% for formule in services.formules %}
+      <div class="flex flex-col bg-white border rounded-lg p-4 pt-6 shadow-lg min-h-48">
+        <div class="mb-12">
+          <div class="text-gray-800 text-xl font-bold text-center mb-2">{{formule.name}}</div>
+          <div class="space-y-2">
+            <!-- check - start -->
+            <div class="flex gap-2 items-stretch">
+              <span class="text-gray-600">{{formule.description | raw}}</span>
+            </div>
+            <!-- check - end -->
+          </div>
+        </div>
+
+        <div class="flex flex-col gap-8 mt-auto">
+          <div class="flex justify-center items-end gap-1">
+            <span class="self-start text-gray-600"></span>
+            <span class="text-2xl text-gray-500 font-bold">Prix :
+              {{formule.price}}
+              €</span>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+      <!-- plan - end -->
+    </div>
+  </div>
+</div>

@@ -9,6 +9,7 @@
 import './styles/app.css';
 
 // start the Stimulus application
-import './bootstrap';
 import 'tw-elements';
-import './js/menu';
+import './bootstrap';
+//import './js/menu';
+

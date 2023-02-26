@@ -1,5 +1,4 @@
-<div
-  class="relative grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6 xl:gap-8 mb-4 md:mb-8">
+<div class="relative px-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-4 md:mb-8">
   {% for service in services %}
   <!-- image - start -->
   <a href="{{path('app_services_show', {'slug': service.slug}) }}"
