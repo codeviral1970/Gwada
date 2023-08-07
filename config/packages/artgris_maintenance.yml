@@ -1,4 +1,0 @@
-artgris_maintenance:
-    enable: true                 # Enable|Disable maintenance - default: false
-    ips: ["127.0.0.1","::1", "localhost","::8889"] # IPs allow (prod) - default: []
-    response: 503 
