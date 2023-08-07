@@ -3,6 +3,7 @@
 namespace App\Controller\Admin;
 
 use App\Entity\Services;
+use App\Form\SlideType;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use Vich\UploaderBundle\Form\Type\VichImageType;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Action;
@@ -12,6 +13,7 @@ use EasyCorp\Bundle\EasyAdminBundle\Field\SlugField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\BooleanField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\CollectionField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 
@@ -33,9 +35,8 @@ class ServicesCrudController extends AbstractCrudController
                 ->setTargetFieldName('name')
                 ->onlyOnForms(),
             TextEditorField::new('description'),
-            TextField::new('imageFile', 'Image')
-                ->setFormType(VichImageType::class)
-                ->hideOnIndex(),
+            CollectionField::new('slides', 'Image')
+                ->setEntryType(SlideType::class),
             ImageField::new('avatar')
                 ->setBasePath('images/services')
                 ->onlyOnIndex(),

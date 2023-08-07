@@ -17,39 +17,39 @@ use Vich\UploaderBundle\Form\Type\VichImageType;
 
 class SlideCrudController extends AbstractCrudController
 {
-  public static function getEntityFqcn(): string
-  {
-    return Slide::class;
-  }
+    public static function getEntityFqcn(): string
+    {
+        return Slide::class;
+    }
 
-  public function configureFields(string $pageName): iterable
-  {
-    return [
-      IdField::new('id')->hideOnForm()->hideOnIndex(),
-      TextField::new('imageName', 'Nom de l\'image'),
-      TextField::new('imageFile', 'Imagefile ')
-        ->setFormType(VichImageType::class)
-        ->hideOnIndex(),
-      ImageField::new('caption', 'Caption')
-        ->setBasePath('images/gallery')
-        ->setUploadDir('public/images/gallery')
-        ->setUploadedFileNamePattern('[randomhash].[extension]')
-        ->onlyOnIndex(),
+    //   public function configureFields(string $pageName): iterable
+    //   {
+    //     return [
+    //       IdField::new('id')->hideOnForm()->hideOnIndex(),
+    //       TextField::new('imageName', 'Nom de l\'image'),
+    //       TextField::new('imageFile', 'Imagefile ')
+    //         ->setFormType(VichImageType::class)
+    //         ->hideOnIndex(),
+    //       ImageField::new('caption', 'Caption')
+    //         ->setBasePath('images/gallery')
+    //         ->setUploadDir('public/images/gallery')
+    //         ->setUploadedFileNamePattern('[randomhash].[extension]')
+    //         ->onlyOnIndex(),
 
-      AssociationField::new('gallery', 'Activité'),
-    ];
-  }
+    //       AssociationField::new('gallery', 'Activité'),
+    //     ];
+    //   }
 
-  public function configureActions(Actions $actions): Actions
-  {
-    return $actions->add(Crud::PAGE_INDEX, Action::DETAIL);
-  }
+    //   public function configureActions(Actions $actions): Actions
+    //   {
+    //     return $actions->add(Crud::PAGE_INDEX, Action::DETAIL);
+    //   }
 
-  public function configureCrud(Crud $crud): Crud
-  {
-    return $crud
-      ->setEntityLabelInPlural('Images caroussel')
-      ->setEntityLabelInSingular('Image caroussel')
-      ->setDefaultSort(['imageName' => 'ASC']);
-  }
+    //   public function configureCrud(Crud $crud): Crud
+    //   {
+    //     return $crud
+    //       ->setEntityLabelInPlural('Images caroussel')
+    //       ->setEntityLabelInSingular('Image caroussel')
+    //       ->setDefaultSort(['imageName' => 'ASC']);
+    //   }
 }
