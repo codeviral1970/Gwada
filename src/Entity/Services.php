@@ -61,7 +61,7 @@ class Services
     #[ORM\Column(nullable: true)]
     private ?\DateTimeImmutable $updatedAt = null;
 
-    #[ORM\OneToMany(mappedBy: 'gallery', targetEntity: Slide::class)]
+    #[ORM\OneToMany(mappedBy: 'gallery', targetEntity: Slide::class, cascade: ['persist'], orphanRemoval: true)]
     private Collection $slides;
 
     #[ORM\Column]
