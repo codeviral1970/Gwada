@@ -2,12 +2,13 @@
 
 {% block body %}
 
-
-<div class="text-center text-color-gradient text-xl md:text-2xl font-bold py-7 uppercase ">
-  <h1>Listes des activités</h1>
+<div class="max-w-[1140px] m-auto">
+    <div class="text-center ">
+      <h2 class="text-gray-700 text-xl md:text-2xl font-bold py-7 uppercase">Listes des activités</h2>
+    </div>
+    {% include "components/_excursion.html.twig" %}
 </div>
 
-{% include "components/_excursion.html.twig" %}
 
 
 {% endblock %}
