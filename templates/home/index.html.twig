@@ -5,104 +5,81 @@
 
 {% block body %}
 
-    <!-- hero - start -->
-    <div class=" w-full h-screen">
-        {% for img in homes %}
-        <div class="relative">
-            <!-- image - start -->
-            <img src="{{ vich_uploader_asset(img, 'imageFile')}}" loading="lazy" alt="{{img.imageName}}"
-            class="w-full h-screen object-cover" /><!-- image - end -->
+<!-- hero - start -->
+<div class=" w-full h-screen">
+    {% for img in homes %}
+    <div class="relative">
+        <!-- image - start -->
+        <img src="{{ vich_uploader_asset(img, 'imageFile')}}" loading="lazy" alt="{{img.imageName}}"
+        class="w-full h-screen object-cover" /><!-- image - end -->
 
-            <!-- overlay - start -->
-            <div class="bg-gray-300 mix-blend-multiply absolute inset-0"> </div>
-            <!-- overlay - end -->
-            <div class="max-w-[1140px] m-auto">
-                <div class="absolute top-[30%] w-full h-full md:-[50%] max-w-[600px] text-white p-4">
-                    <h1 class="text-3xl font-bold py-4">
-                        Venez decouvrir la Guadeloupe à travers nos excursions uniques.
-                    </h1>
-                    <span class="italic text sm text-white py-4">avec </span>
-                    <h2 class="text-4xl font-bold italic py-4">
-                        GWADA EXCURSION
-                    </h2>
-                    <p class="text-sm font-medium ">
-                        
-                        La Guadeloupe, joyau des Caraïbes, séduit par ses plages dorées, sa forêt tropicale luxuriante et son art de vivre créole. Entre traditions authentiques et paysages enchanteurs, découvrez une île enchanteresse où culture et nature fusionnent harmonieusement.
-                    </p>
-                </div>
-                <!-- text end -->
+        <!-- overlay - start -->
+        <div class="bg-gray-300 mix-blend-multiply absolute inset-0"> </div>
+        <!-- overlay - end -->
+        <div class="max-w-[1140px] m-auto">
+            <div class="absolute top-[30%] w-full h-full md:-[50%] max-w-[600px] text-white p-4">
+                <h1 class="text-3xl font-bold py-4">
+                    Venez decouvrir la Guadeloupe à travers nos excursions uniques.
+                </h1>
+                <span class="italic text sm text-white py-4">avec </span>
+                <h2 class="text-4xl font-bold italic py-4">
+                    GWADA <sapn class="text-color-gradient">EXCURSION</sapn>
+                </h2>
+                <p class="text-sm font-medium ">
+                    
+                    La Guadeloupe, joyau des Caraïbes, séduit par ses plages dorées, sa forêt tropicale luxuriante et son art de vivre créole. Entre traditions authentiques et paysages enchanteurs, découvrez une île enchanteresse où culture et nature fusionnent harmonieusement.
+                </p>
             </div>
-        </div>
-        {% endfor %}
-    </div>
-    <!-- hero - end -->
-
-    {# test container  #}
-    <div class="max-w-[1140px] m-auto">
-        <div class="w-full md:flex mt-[-75px]">
-            <div class="relative p-4">
-                <img 
-                class="w-full h-full object-cover relative border-4 border-white shadow-lg "
-                src="https://images.unsplash.com/photo-1594060116816-c5a149503acd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8Z3VhZGVsb3VwZXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60" alt="">
-            </div>
-            <div class="relative p-4">
-                <img 
-                class="w-full h-full object-cover relative border-4 border-white shadow-lg "
-                src="https://images.unsplash.com/photo-1652300857122-ad5309a1c4c7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fGxlcyUyMHNhaW50ZXMlMjBndWFkZWxvdXBlfGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60" alt="">
-            </div>
-            <div class="relative p-4">
-                <img 
-                class="w-full h-full object-cover relative border-4 border-white shadow-lg "
-                src="https://images.unsplash.com/photo-1682687220795-796d3f6f7000?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxzZWFyY2h8MjJ8fHRyYXZlbHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60" alt="">
-            </div>
+            <!-- text end -->
         </div>
     </div>
+    {% endfor %}
+</div>
+<!-- hero - end -->
 
-{# Les trois photos #}
-    {# <div class="max-w-[1140px] m-auto w-full md:flex mt-[-75px]">
-        <div class="relative p-4 group cursor-pointer">
-            <h3 class="absolute z-10 top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] text-white text-2xl font-bold ">test</h3>
+
+<!-- 3 images presentation - start -->
+<div class="max-w-[1140px] m-auto">
+    <div class="w-full md:flex mt-[-75px]">
+        <div class="relative p-4">
             <img 
             class="w-full h-full object-cover relative border-4 border-white shadow-lg "
             src="https://images.unsplash.com/photo-1594060116816-c5a149503acd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8Z3VhZGVsb3VwZXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60" alt="">
         </div>
-        <div class="relative p-4 group cursor-pointer">
-            <h3 class="absolute z-10 top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] text-white text-2xl font-bold ">test</h3>
+        <div class="relative p-4">
             <img 
-            class="w-full h-full object-cover relative border-4 border-white shadow-lg group-hover:scale-105 transition duration-200"
+            class="w-full h-full object-cover relative border-4 border-white shadow-lg "
             src="https://images.unsplash.com/photo-1652300857122-ad5309a1c4c7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fGxlcyUyMHNhaW50ZXMlMjBndWFkZWxvdXBlfGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60" alt="">
         </div>
-        <div class="relative p-4 group cursor-pointer">
-            <h3 class="absolute z-10 top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] text-white text-2xl font-bold ">test</h3>
+        <div class="relative p-4">
             <img 
-            class="w-full h-full object-cover relative border-4 border-white shadow-lg group-hover:scale-105 transition duration-200"
-            src="https://images.unsplash.com/photo-1682687220795-796d3f6f7000?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxzZWFyY2h8MjJ8fHRyYXZlbHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60" alt="">
+            class="w-full h-full object-cover relative border-4 border-white shadow-lg "
+            src="https://images.unsplash.com/photo-1687940825442-8a77ef0fe3c9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTZ8fGxlcyUyMGNhcmFpYmVzfGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60" alt="">
         </div>
-    </div> #}
+    </div>
+</div>
+<!-- 3 images de presentation - end -->
 
-
-<!-- gallery - start -->
-
+<!-- Service - start -->
 <div class="max-w-[1140px] m-auto">
     {% for home in homes %}
     <div class="mb-10 mt-10">
         <h2 class="text-color-gradient text-2xl lg:text-3xl font-bold text-center mb-4 md:mb-8 xl:mb-12">
             {{home.title}}
         </h2>
-
-        <div class="p-4 text-lg text-skin-muted">{{home.description | raw}}</div>
+        <div class="relative">
+            <div class="p-4 text-lg text-secondary">
+                {{home.description | raw}}
+            </div>
+        </div>
     </div>
     {% endfor %}
-
-    {% include "components/_excursion.html.twig" %}
+    
+    {% include "components/_card.html.twig" %}
 </div>
 
-<div class="max-w-[1140px] m-auto">
-    <div class="md:px-4 py-6 ">
-        {% include "components/_card.html.twig" %}
-    </div>
+<!-- Gallery - start -->
+ {% include "components/_galerie.html.twig" %}
+<!-- Gallery - end -->
 </div>
-</ddiv>
-
-<!-- gallery - end -->
 {% endblock %}

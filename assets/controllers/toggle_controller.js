@@ -1,8 +1,4 @@
 import { Controller } from "@hotwired/stimulus";
-import { Carousel, initTE } from "tw-elements";
-
-console.log("tw");
-initTE({ Carousel });
 
 export default class extends Controller {
   static targets = ["menu", "menuButtonClose", "menuButtonOpen"];

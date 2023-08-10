@@ -1,27 +1,22 @@
-"use strict";
 (self["webpackChunk"] = self["webpackChunk"] || []).push([["coroussel"],{
 
 /***/ "./assets/js/caroussel.js":
 /*!********************************!*\
   !*** ./assets/js/caroussel.js ***!
   \********************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+/***/ (() => {
 
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var tw_elements__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tw-elements */ "./node_modules/.pnpm/tw-elements@1.0.0-beta3_postcss@8.4.27/node_modules/tw-elements/dist/js/tw-elements.es.min.js");
+// import { Carousel, initTE } from "tw-elements";
 
-console.log("tw");
-(0,tw_elements__WEBPACK_IMPORTED_MODULE_0__.initTE)({
-  Carousel: tw_elements__WEBPACK_IMPORTED_MODULE_0__.Carousel
-});
+// console.log("tw");
+// initTE({ Carousel });
 
 /***/ })
 
 },
 /******/ __webpack_require__ => { // webpackRuntimeModules
 /******/ var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
-/******/ __webpack_require__.O(0, ["vendors-node_modules_pnpm_tw-elements_1_0_0-beta3_postcss_8_4_27_node_modules_tw-elements_dis-a2b294"], () => (__webpack_exec__("./assets/js/caroussel.js")));
-/******/ var __webpack_exports__ = __webpack_require__.O();
+/******/ var __webpack_exports__ = (__webpack_exec__("./assets/js/caroussel.js"));
 /******/ }
 ]);
-//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiY29yb3Vzc2VsLmpzIiwibWFwcGluZ3MiOiI7Ozs7Ozs7Ozs7O0FBQStDO0FBRS9DRSxPQUFPLENBQUNDLEdBQUcsQ0FBQyxJQUFJLENBQUM7QUFDakJGLG1EQUFNLENBQUM7RUFBRUQsUUFBUSxFQUFSQSxpREFBUUE7QUFBQyxDQUFDLENBQUMiLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vLi9hc3NldHMvanMvY2Fyb3Vzc2VsLmpzIl0sInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7IENhcm91c2VsLCBpbml0VEUgfSBmcm9tIFwidHctZWxlbWVudHNcIjtcblxuY29uc29sZS5sb2coXCJ0d1wiKTtcbmluaXRURSh7IENhcm91c2VsIH0pO1xuIl0sIm5hbWVzIjpbIkNhcm91c2VsIiwiaW5pdFRFIiwiY29uc29sZSIsImxvZyJdLCJzb3VyY2VSb290IjoiIn0=
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiY29yb3Vzc2VsLmpzIiwibWFwcGluZ3MiOiI7Ozs7Ozs7O0FBQUE7O0FBRUE7QUFDQSIsInNvdXJjZXMiOlsid2VicGFjazovLy8uL2Fzc2V0cy9qcy9jYXJvdXNzZWwuanMiXSwic291cmNlc0NvbnRlbnQiOlsiLy8gaW1wb3J0IHsgQ2Fyb3VzZWwsIGluaXRURSB9IGZyb20gXCJ0dy1lbGVtZW50c1wiO1xuXG4vLyBjb25zb2xlLmxvZyhcInR3XCIpO1xuLy8gaW5pdFRFKHsgQ2Fyb3VzZWwgfSk7XG4iXSwibmFtZXMiOltdLCJzb3VyY2VSb290IjoiIn0=

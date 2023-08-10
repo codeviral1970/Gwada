@@ -81,6 +81,17 @@ class HomeController extends AbstractController
         ]);
     }
 
+
+    #[Route('/galerie', name: 'app_galerie')]
+    public function gallerie(SlideRepository $slides): Response
+    {
+        $slides = $slides->findAll();
+        dump($slides);
+        return $this->render('home/galerie.html.twig', [
+            'slides' => $slides,
+        ]);
+    }
+
     #[Route('/contact', name: 'app_contact')]
     public function contact(
         Request $request,

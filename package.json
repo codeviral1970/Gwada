@@ -37,6 +37,7 @@
     "dependencies": {
         "install": "^0.13.0",
         "stimulus": "^3.2.2",
+        "stimulus-carousel": "^5.0.1",
         "stimulus-use": "^0.52.0",
         "tw-elements": "1.0.0-beta3"
     }

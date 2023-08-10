@@ -1,4 +1,4 @@
-import { Carousel, initTE } from "tw-elements";
+// import { Carousel, initTE } from "tw-elements";
 
-console.log("tw");
-initTE({ Carousel });
+// console.log("tw");
+// initTE({ Carousel });

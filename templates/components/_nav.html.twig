@@ -3,7 +3,7 @@
         <div class="items-start">
             <a href="{{path('app_home')}}" target="_self">
                 <h2 class="text-gray-700 uppercase text-lg md:text-2xl font-bold">
-                    GWADA EXCURSION
+                    GWADA <sapn class="text-color-gradient">EXCURSION</sapn>
                 </h2>
             </a>
         </div>
@@ -14,10 +14,12 @@
                 {% set current_path = app.request.get('_route') %}
                 <a class="block lg:inline-block py-2 px-2 hover:text-text-raven transition {% if current_path == 'app_home' %} text-color-gradient{% endif %}"
                 href="{{ path('app_home') }}">Accueil</a>
-                <a class="block lg:inline-block py-2 px-2 uppercase hover:text-text-raven transition {% if current_path == 'app_about' %} text-color-gradient{% endif %}"
+                <a class="block lg:inline-block py-2 px-2 hover:text-text-raven transition {% if current_path == 'app_about' %} text-color-gradient{% endif %}"
                 href="{{ path('app_about') }}">à propos</a>
                 <a class="block lg:inline-block py-2 px-2 hover:text-text-raven transition {% if current_path == 'app_services' %} text-color-gradient{% endif %}"
                 href="{{ path('app_services') }}">Activités</a>
+                <a class="block lg:inline-block py-2 px-2 hover:text-text-raven transition {% if current_path == 'app_galerie' %} text-color-gradient{% endif %}"
+                href="{{ path('app_galerie') }}">Galerie</a>
                 <a class="block lg:inline-block py-2 px-2 hover:text-text-raven transition {% if current_path == 'app_contact' %} text-color-gradient{% endif %}"
                 href="{{ path('app_contact') }}">Contact</a>
             </div>
