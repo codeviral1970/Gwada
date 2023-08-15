@@ -88,7 +88,6 @@ class HomeController extends AbstractController
     public function gallerie(SlideRepository $slides): Response
     {
         $slides = $slides->findAll();
-        dump($slides);
         return $this->render('home/galerie.html.twig', [
             'slides' => $slides,
         ]);
