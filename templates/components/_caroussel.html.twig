@@ -3,6 +3,7 @@
   class="relative"
   data-te-carousel-init
   data-te-carousel-slide
+  data-te-ride="carousel"
   >
 
   <!--Carousel indicators-->
@@ -30,6 +31,7 @@
     <div
       class="relative float-left -mr-[100%] w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none"
       data-te-carousel-item
+       data-te-interval="2000"
       {{ key == 0 ? 'data-te-carousel-active' : 'hidden' }}
       style="backface-visibility: hidden">
       <img
