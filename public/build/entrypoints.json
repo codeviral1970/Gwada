@@ -5,7 +5,7 @@
         "http://localhost:8080/build/runtime.js",
         "http://localhost:8080/build/vendors-node_modules_pnpm_webpack-dev-server_4_15_1_webpack-cli_4_10_0_webpack_5_88_2_node_mo-2eb10f.js",
         "http://localhost:8080/build/vendors-node_modules_pnpm_tw-elements_1_0_0-beta3_postcss_8_4_27_node_modules_tw-elements_dis-a2b294.js",
-        "http://localhost:8080/build/vendors-node_modules_pnpm_symfony_stimulus-bridge_3_2_2__hotwired_stimulus_3_2_2_node_modules-fa4a65.js",
+        "http://localhost:8080/build/vendors-node_modules_pnpm_symfony_stimulus-bridge_3_2_2__hotwired_stimulus_3_2_2_node_modules-a2ba45.js",
         "http://localhost:8080/build/app.js"
       ],
       "css": [

@@ -17,5 +17,6 @@
   "build/images/log-out-outline.svg": "http://localhost:8080/build/./images/log-out-outline.svg",
   "build/images/cross.svg": "http://localhost:8080/build/./images/cross.svg",
   "build/images/menu.svg": "http://localhost:8080/build/./images/menu.svg",
-  "build/vendors-node_modules_pnpm_symfony_stimulus-bridge_3_2_2__hotwired_stimulus_3_2_2_node_modules-cf8778.js": "http://localhost:8080/build/vendors-node_modules_pnpm_symfony_stimulus-bridge_3_2_2__hotwired_stimulus_3_2_2_node_modules-cf8778.js"
+  "build/vendors-node_modules_pnpm_symfony_stimulus-bridge_3_2_2__hotwired_stimulus_3_2_2_node_modules-cf8778.js": "http://localhost:8080/build/vendors-node_modules_pnpm_symfony_stimulus-bridge_3_2_2__hotwired_stimulus_3_2_2_node_modules-cf8778.js",
+  "build/vendors-node_modules_pnpm_symfony_stimulus-bridge_3_2_2__hotwired_stimulus_3_2_2_node_modules-a2ba45.js": "http://localhost:8080/build/vendors-node_modules_pnpm_symfony_stimulus-bridge_3_2_2__hotwired_stimulus_3_2_2_node_modules-a2ba45.js"
 }
