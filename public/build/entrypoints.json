@@ -3,8 +3,9 @@
     "app": {
       "js": [
         "/build/runtime.2428ddbc.js",
-        "/build/410.69d9e734.js",
-        "/build/app.6f9b0571.js"
+        "/build/94.5754e574.js",
+        "/build/702.661c95be.js",
+        "/build/app.56c8ee41.js"
       ],
       "css": [
         "/build/app.34c3fca6.css"
@@ -13,7 +14,8 @@
     "coroussel": {
       "js": [
         "/build/runtime.2428ddbc.js",
-        "/build/coroussel.4459049b.js"
+        "/build/94.5754e574.js",
+        "/build/coroussel.1d3fea5c.js"
       ]
     }
   }
