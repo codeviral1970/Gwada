@@ -2,20 +2,18 @@
   "entrypoints": {
     "app": {
       "js": [
-        "http://localhost:8080/build/runtime.js",
-        "http://localhost:8080/build/vendors-node_modules_pnpm_webpack-dev-server_4_15_1_webpack-cli_4_10_0_webpack_5_88_2_node_mo-2eb10f.js",
-        "http://localhost:8080/build/vendors-node_modules_pnpm_symfony_stimulus-bridge_3_2_2__hotwired_stimulus_3_2_2_node_modules-cf8778.js",
-        "http://localhost:8080/build/app.js"
+        "/build/runtime.2428ddbc.js",
+        "/build/410.69d9e734.js",
+        "/build/app.6f9b0571.js"
       ],
       "css": [
-        "http://localhost:8080/build/app.css"
+        "/build/app.34c3fca6.css"
       ]
     },
     "coroussel": {
       "js": [
-        "http://localhost:8080/build/runtime.js",
-        "http://localhost:8080/build/vendors-node_modules_pnpm_webpack-dev-server_4_15_1_webpack-cli_4_10_0_webpack_5_88_2_node_mo-2eb10f.js",
-        "http://localhost:8080/build/coroussel.js"
+        "/build/runtime.2428ddbc.js",
+        "/build/coroussel.4459049b.js"
       ]
     }
   }
