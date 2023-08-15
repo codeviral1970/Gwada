@@ -1,59 +1,64 @@
 <footer class="max-w-[1140px] mx-auto h-full p-3">
     <div class="grid  md:grid-cols-3 gap-2 items-center">
-        {# <div class=" w-full md:flex md:items-center md:justify-between"> #}
-       
-                <div class="text-center md:text-left text-gray-400 text-sm py-1 order-3 md:order-first">©
-                    {{'now' | date('Y')}}
-                    -
-                    <a href="https://codeviral.fr/">Codeviral.</a> All rights reserved.
-                </div>
-                <div class="order-2 md:order-2">
-                    {% set current_path = app.request.get('_route') %}
-                    <!-- nav - start -->
-                    <nav>
-                        <ul class="flex items-center justify-center text-sm">
-                            <li
-                                class="mr-3 md:mr-6 text-secondary {% if current_path == 'app_about' %} text-color-gradient {% endif %}">
-                                <a href="{{path('app_about')}}" class="w-full hover:text-neptune">A propos
-                                </a>
-                            </li>
-                            <li
-                                class="mr-3 md:mr-6 text-secondary {% if current_path == 'app_contact' %} text-color-gradient{% endif %}">
-                                <a href="{{path('app_contact')}}" class="w-full hover:text-neptune transition duration-100">Contact</a>
-                            </li>
-                            <li class="mr-3 md:mr-6 text-secondary {% if current_path == 'app_faq' %} text-color-gradient{% endif %}">
-                                <a href="{{path('app_faq')}}" class="w-full hover:text-neptune  transition duration-100">Faqs</a>
-                            </li>
-                            {% if is_granted('ROLE_ADMIN') %}
-                            <li
-                                class="mr-3 md:mr-6 text-secondary {% if current_path == 'app_gwada_admin' %} text-color-gradient{% endif %}">
-                                <a href="{{path('app_gwada_admin')}}" class="w-full hover:text-neptune transition duration-100">Admin</a>
-                            </li>
-                            <li
-                                class="mr-3 md:mr-6 text-secondary {% if current_path == 'app_logout' %} text-color-gradient{% endif %}">
-                                <a href="{{path('app_logout')}}" class="w-full hover:text-neptune transition duration-100"><svg
-                                    xmlns="http://www.w3.org/2000/svg" class="ionicon w-5 h-5" width="24" height="24"
-                                    viewBox="0 0 512 512">
-                                    <title>Log Out</title>
-                                    <path
+
+        <div class="text-center md:text-left text-gray-400 text-sm py-1 order-3 md:order-first">©
+            {{'now' | date('Y')}}
+            -
+            <a href="https://codeviral.fr/">Codeviral.</a> All rights reserved.
+        </div>
+        <div class="order-2 md:order-2">
+            {% set current_path = app.request.get('_route') %}
+            <!-- nav - start -->
+            <nav>
+                <ul class="flex items-center justify-center text-sm">
+                    {# <li
+                        class="mr-3 md:mr-6 text-secondary {% if current_path == 'app_about' %} text-color-gradient {% endif %}">
+                        <a href="{{path('app_about')}}" class="w-full hover:text-neptune">A propos
+                        </a>
+                    </li> #}
+                    <li
+                        class="mr-3 md:mr-6 text-secondary {% if current_path == 'app_contact' %} text-color-gradient{% endif %}">
+                        <a href="{{path('app_rgpd')}}" class="w-full hover:text-neptune transition duration-100">Mention
+                            légale</a>
+                    </li>
+                    <li
+                        class="mr-3 md:mr-6 text-secondary {% if current_path == 'app_faq' %} text-color-gradient{% endif %}">
+                        <a href="{{path('app_faq')}}"
+                            class="w-full hover:text-neptune  transition duration-100">Faqs</a>
+                    </li>
+                    {% if is_granted('ROLE_ADMIN') %}
+                    <li
+                        class="mr-3 md:mr-6 text-secondary {% if current_path == 'app_gwada_admin' %} text-color-gradient{% endif %}">
+                        <a href="{{path('app_gwada_admin')}}"
+                            class="w-full hover:text-neptune transition duration-100">Admin</a>
+                    </li>
+                    <li
+                        class="mr-3 md:mr-6 text-secondary {% if current_path == 'app_logout' %} text-color-gradient{% endif %}">
+                        <a href="{{path('app_logout')}}" class="w-full hover:text-neptune transition duration-100"><svg
+                                xmlns="http://www.w3.org/2000/svg" class="ionicon w-5 h-5" width="24" height="24"
+                                viewBox="0 0 512 512">
+                                <title>Log Out</title>
+                                <path
                                     d="M304 336v40a40 40 0 01-40 40H104a40 40 0 01-40-40V136a40 40 0 0140-40h152c22.09 0 48 17.91 48 40v40M368 336l80-80-80-80M176 256h256"
                                     fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
                                     stroke-width="32" />
-                                </svg></a>
-                            </li>
-                            {% else %}
-                            <li class="mr-3 md:mr-6 text-secondary {% if current_path == 'app_gwada_admin' %} text-hippie {% endif %}">
-                                <a href="{{path('app_gwada_admin')}}" class="w-full hover:text-neptune transition duration-100">Se
-                                connecter</a>
-                            </li>
-                            {% endif %}
-                        </ul>
-                    </nav>
+                            </svg></a>
+                    </li>
+                    {% else %}
+                    <li
+                        class="mr-3 md:mr-6 text-secondary {% if current_path == 'app_gwada_admin' %} text-hippie {% endif %}">
+                        <a href="{{path('app_gwada_admin')}}"
+                            class="w-full hover:text-neptune transition duration-100">Se
+                            connecter</a>
+                    </li>
+                    {% endif %}
+                </ul>
+            </nav>
 
-                    <!-- nav - end -->
-                </div>
-                <!-- social - start -->
-                <div class="md:order-3 md:text-left">
+            <!-- nav - end -->
+        </div>
+        <!-- social - start -->
+        <!-- <div class="md:order-3 md:text-left"><div class="md:order-3 md:text-left">
                     <div class="flex items-center justify-around md:justify-end gap-2 order-first md:order-3 ">
                         <a href="#" target="_blank"
                             class="text-secondary hover:text-neptune active:text-neptune transition duration-100">
@@ -81,10 +86,9 @@
                             </svg>
                         </a>
                     </div>
-                </div>
-                    <!-- social - end -->
-            
-        {# </div> #}
-    </div>  
-   
+                </div> -->
+        <!-- social - end -->
+
+    </div>
+
 </footer>

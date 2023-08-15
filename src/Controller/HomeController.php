@@ -39,6 +39,7 @@ class HomeController extends AbstractController
         $homes = $home->findAll();
         $footerYear = new \DateTime();
         $lastSlides = $slide->findLastTreeImages();
+        $gallerieImages = $slide->findImagesInFirstPage();
 
         return $this->render('home/index.html.twig', [
             'services' => $services,
@@ -46,6 +47,7 @@ class HomeController extends AbstractController
             'footerYear' => $footerYear,
             'slides' => $lastSlides,
             'bestServices' => $bestServices,
+            'gallerieImages' => $gallerieImages
         ]);
     }
 

@@ -7,10 +7,10 @@
 
 <!-- hero - start -->
 <div class=" w-full h-screen">
-    {% for img in homes %}
+    {% for home in homes %}
     <div class="relative">
         <!-- image - start -->
-        <img src="{{ vich_uploader_asset(img, 'imageFile')}}" loading="lazy" alt="{{img.imageName}}"
+        <img src="{{ vich_uploader_asset(home, 'imageFile')}}" loading="lazy" alt="{{home.imageName}}"
         class="w-full h-screen object-cover" /><!-- image - end -->
 
         <!-- overlay - start -->
@@ -18,16 +18,15 @@
         <!-- overlay - end -->
         <div class="max-w-[1140px] m-auto">
             <div class="absolute top-[30%] w-full h-full md:-[50%] max-w-[600px] text-white p-4">
-                <h1 class="text-3xl font-bold py-4">
-                    Venez decouvrir la Guadeloupe à travers nos excursions uniques.
-                </h1>
-                <span class="italic text sm text-white py-4">avec </span>
-                <h2 class="text-4xl font-bold italic py-4">
-                    GWADA <sapn class="text-color-gradient">EXCURSION</sapn>
+                <h2 class="text-3xl font-bold py-4">
+                    {{home.titleOne}}
                 </h2>
-                <p class="text-sm font-medium ">
-                    
-                    La Guadeloupe, joyau des Caraïbes, séduit par ses plages dorées, sa forêt tropicale luxuriante et son art de vivre créole. Entre traditions authentiques et paysages enchanteurs, découvrez une île enchanteresse où culture et nature fusionnent harmonieusement.
+                <span class="italic text sm text-white py-4">{{home.titleThree}} </span>
+                <h1 class="text-4xl font-bold italic py-4">
+                    GWADA <sapn class="text-color-gradient">EXCURSION</sapn>
+                </h1>
+                <p class="text-sm font-medium ">                
+                    {{home.titleTwo}}
                 </p>
             </div>
             <!-- text end -->

@@ -33,6 +33,9 @@ class Slide
   #[ORM\ManyToOne(inversedBy: 'slides')]
   private ?Services $gallery = null;
 
+  #[ORM\Column(nullable: true)]
+  private ?bool $isFirstPage = null;
+
   public function __construct()
   {
     $this->caption = '';
@@ -114,5 +117,17 @@ class Slide
     $this->gallery = $gallery;
 
     return $this;
+  }
+
+  public function isIsFirstPage(): ?bool
+  {
+      return $this->isFirstPage;
+  }
+
+  public function setIsFirstPage(?bool $isFirstPage): self
+  {
+      $this->isFirstPage = $isFirstPage;
+
+      return $this;
   }
 }
