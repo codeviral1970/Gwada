@@ -1,34 +1,45 @@
 <!DOCTYPE html>
 <html lang="fr">
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <!-- Seo  -->
-        {{ leogout_seo() }}
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        <!-- <link rel="icon" type="image/x-icon" href="{{ asset('build/images/favicon.ico') }}" /> -->
-        <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('build/images/apple-touch-icon.png') }}">
-        <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('build/images/favicon-32x32.png') }}">
-        <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('build/images/favicon-16x16.png') }}">
-        {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
-        <link rel="stylesheet" href="{{asset('bundles/chcookieconsent/css/cookie_consent.css')}}">
-        
-        {% block stylesheets %}
-        {{ encore_entry_link_tags('app') }}
-        {% endblock %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Seo  -->
+    {{ leogout_seo() }}
+    <title>{% block title %}Welcome!{% endblock %}</title>
+    <!-- <link rel="icon" type="image/x-icon" href="{{ asset('build/images/favicon.ico') }}" /> -->
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('build/images/apple-touch-icon.png') }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('build/images/favicon-32x32.png') }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('build/images/favicon-16x16.png') }}">
+    {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
 
-        {% block javascripts %}
-        {{ encore_entry_script_tags('app') }}
-        {% endblock %}
 
-    </head>
+    {% block stylesheets %}
+    {{ encore_entry_link_tags('app') }}
+    {% endblock %}
 
-    <body>
-        {% include "components/_nav.html.twig" %}
-        {% block body %}{% endblock %}
-        {{ render_esi(path('ch_cookie_consent.show_if_cookie_consent_not_set', { 'locale' : 'fr' })) }}
-        {% include "components/_footer.html.twig" %}
-    </body>
+    {% block javascripts %}
+    {{ encore_entry_script_tags('app') }}
+    {% endblock %}
+
+</head>
+
+<body>
+    {% include "components/_nav.html.twig" %}
+    {% block body %}{% endblock %}
+    {% include "components/_footer.html.twig" %}
+
+    <script>
+        window.axeptioSettings = {
+            clientId: "64db160680c35a8ea3cf3665",
+        };
+
+        (function (d, s) {
+            var t = d.getElementsByTagName(s)[0], e = d.createElement(s);
+            e.async = true; e.src = "//static.axept.io/sdk.js";
+            t.parentNode.insertBefore(e, t);
+        })(document, "script");
+    </script>
+</body>
 
 </html>
