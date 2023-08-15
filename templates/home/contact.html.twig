@@ -3,22 +3,33 @@
 {% block title "Contact" %}
 
 {% block body %}
-<div class="w-full">
-  <div class="max-w-6xl mx-auto">
+<div class="max-w-6xl m-auto w-full md:h-screen py-16 mb-10">
     <!-- text - start -->
     {% for contact in contactDescription %}
     <div class="mb-10 md:mb-16 px-4">
-      <h2 class="text-color-gradient text-2xl lg:text-3xl font-bold text-center my-4 md:mb-6">{{contact.title}}</h2>
-      <div>
-        <div class="text-secondary md:text-lg text-justify mx-auto leading-loose">
-          {{contact.description | raw}}
+        {# <h2 class="text-3xl text-center text-gray-700 font-bold">{{contact.title}}</h2> #}
+        <h2 class="text-3xl text-center text-gray-700 font-bold">Nous <sapn class="text-color-gradient">contacter</sapn> </h2>
+    <div>
+    <div class="grid md:grid-cols-2 py-8 gap-8"> 
+        <div class="px-2">
+            <span class="w-full md:h-full object-cover p-2">{{contact.description | raw}}</span>
         </div>
-      </div>
+        
+        <div class="border border-primary px-2">
+            <p class="text-gray-700 p-6">Gwada Excursion : 06 90 72 04 01</p>
+        </div>
     </div>
     {% endfor %}
-
-    {% include "components/_contactForm.html.twig" with {form: contactForm} only %}
-
-  </div>
+    <div class="grid md:grid-cols-2 mb-8 gap-8">
+        <img 
+        class="w-full md:h-full object-cover p-2 max-h-[500px] h-[200px]"
+        src="https://images.unsplash.com/photo-1541417904950-b855846fe074?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8ODN8fHBsYWdlJTIwZGUlMjBzYWJsZSUyMHZ1ZSUyMGRlJTIwaGF1dHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60" alt="">
+        
+        {% include "components/_contactForm.html.twig" with {form: contactForm} only %}
+    </div>
+    
 </div>
+</div>
+</div>
+
 {% endblock %}

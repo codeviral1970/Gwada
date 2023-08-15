@@ -1,42 +1,44 @@
 <header class="w-full sticky top-0 z-50 font-bold bg-white border-b" data-controller="toggle">
-  <div class="max-w-6xl p-4 mx-auto flex justify-between items-center">
-    <a href="{{path('app_home')}}" target="_self">
-      <div class="text-xl md:text-2xl uppercase items-start">
-        <strong>GWADA
-          <span class="text-color-gradient">EXCURSION</span>
-        </strong>
-      </div>
-    </a>
+    <div class="max-w-[1140px] p-4 m-auto flex justify-between items-center">
+        <div class="items-start">
+            <a href="{{path('app_home')}}" target="_self">
+                <h2 class="text-gray-700 uppercase text-lg md:text-2xl font-bold">
+                    GWADA <sapn class="text-color-gradient">EXCURSION</sapn>
+                </h2>
+            </a>
+        </div>
 
-    <nav data-toggle-target="menu" id="header-menu"
-      class="hidden lg:flex gap-5 absolute lg:relative top-full left-0 w-full lg:w-auto pb-5 lg:pb-0 px-4 lg:px-0 lg:ml-auto bg-white lg:bg-transparent shadow-md lg:shadow-none uppercase text-sm md:text-base items-end">
-      <div class="flex-col lg:flex-row mx-auto divide-y-2 lg:divide-y-0 gap-x-8 lg:items-center">
-        {% set current_path = app.request.get('_route') %}
-        <a class="block lg:inline-block py-2 px-2 hover:text-text-raven transition {% if current_path == 'app_home' %} text-color-gradient{% endif %}"
-          href="{{ path('app_home') }}">Accueil</a>
-        <a class="block lg:inline-block py-2 px-2 uppercase hover:text-text-raven transition {% if current_path == 'app_about' %} text-color-gradient{% endif %}"
-          href="{{ path('app_about') }}">à propos</a>
-        <a class="block lg:inline-block py-2 px-2 hover:text-text-raven transition {% if current_path == 'app_services' %} text-color-gradient{% endif %}"
-          href="{{ path('app_services') }}">Activités</a>
-        <a class="block lg:inline-block py-2 hover:text-text-raven transition {% if current_path == 'app_contact' %} text-color-gradient{% endif %}"
-          href="{{ path('app_contact') }}">Contact</a>
-      </div>
-    </nav>
+        <nav data-toggle-target="menu" id="header-menu"
+        class="hidden lg:flex gap-5 absolute lg:relative top-full left-0 w-full lg:w-auto pb-5 lg:pb-0 px-4 lg:px-0 lg:ml-auto bg-white lg:bg-transparent shadow-md lg:shadow-none uppercase text-sm md:text-base items-end">
+            <div class="flex-col lg:flex-row mx-auto divide-y-2 lg:divide-y-0 gap-x-8 lg:items-center">
+                {% set current_path = app.request.get('_route') %}
+                <a class="block lg:inline-block py-2 px-2 hover:text-text-raven transition {% if current_path == 'app_home' %} text-color-gradient{% endif %}"
+                href="{{ path('app_home') }}">Accueil</a>
+                <a class="block lg:inline-block py-2 px-2 hover:text-text-raven transition {% if current_path == 'app_about' %} text-color-gradient{% endif %}"
+                href="{{ path('app_about') }}">à propos</a>
+                <a class="block lg:inline-block py-2 px-2 hover:text-text-raven transition {% if current_path == 'app_services' %} text-color-gradient{% endif %}"
+                href="{{ path('app_services') }}">Activités</a>
+                <a class="block lg:inline-block py-2 px-2 hover:text-text-raven transition {% if current_path == 'app_galerie' %} text-color-gradient{% endif %}"
+                href="{{ path('app_galerie') }}">Galerie</a>
+                <a class="block lg:inline-block py-2 px-2 hover:text-text-raven transition {% if current_path == 'app_contact' %} text-color-gradient{% endif %}"
+                href="{{ path('app_contact') }}">Contact</a>
+            </div>
+        </nav>
 
-    <button data-action="click->toggle#menu" id="menu-button"
-      class="w-8 h-8 flex items-center justify-center rounded-full hover:text-late-900 transition text-2xl lg:hidden">
-      <svg data-target="toggle.menuButtonOpen" id="menu-button-open-icon" class="fill-current w-6 h-6"
-        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" data-target="menu.menuButtonOpen">
-        <path fill="none" d="M0 0h24v24H0z"></path>
-        <path d="M3 4h18v2H3V4zm0 7h18v2H3v-2zm0 7h18v2H3v-2z"></path>
-      </svg>
-      <svg id="menu-button-close-icon" class="fill-current hidden w-8 h-8" xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 24 24" width="24" height="24" data-target="toggle.menuButtonClose">
-        <path fill="none" d="M0 0h24v24H0z"></path>
-        <path
-          d="M12 10.586l4.95-4.95 1.414 1.414-4.95 4.95 4.95 4.95-1.414 1.414-4.95-4.95-4.95 4.95-1.414-1.414 4.95-4.95-4.95-4.95L7.05 5.636z">
-        </path>
-      </svg>
-    </button>
-  </div>
+        <button data-action="click->toggle#menu" id="menu-button"
+        class="w-11 h-11 text-bold flex items-center justify-center hover:text-late-900 border-none transition text-2xl lg:hidden">
+            <svg data-target="toggle.menuButtonOpen" id="menu-button-open-icon" class="fill-current w-6 h-6"
+                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" data-target="menu.menuButtonOpen">
+                <path fill="none" d="M0 0h24v24H0z"></path>
+                <path d="M3 4h18v2H3V4zm0 7h18v2H3v-2zm0 7h18v2H3v-2z"></path>
+            </svg>
+            <svg id="menu-button-close-icon" class="fill-current hidden w-10 h-10" xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24" width="24" height="24" data-target="toggle.menuButtonClose">
+                <path fill="none" d="M0 0h24v24H0z"></path>
+                <path
+                d="M12 10.586l4.95-4.95 1.414 1.414-4.95 4.95 4.95 4.95-1.414 1.414-4.95-4.95-4.95 4.95-1.414-1.414 4.95-4.95-4.95-4.95L7.05 5.636z">
+                </path>
+            </svg>
+        </button>
+    </div>
 </header>

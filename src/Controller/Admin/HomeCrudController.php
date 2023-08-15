@@ -26,12 +26,15 @@ class HomeCrudController extends AbstractCrudController
     return [
       IdField::new('id')->onlyOnIndex()->hideOnIndex(),
       TextField::new('title'),
-      TextField::new('imageName'),
+      TextField::new('titleOne', 'Titre un'),
+      TextField::new('titleThree', 'Titre trois (ici c\'est le mot avec'),
+      TextField::new('titleTwo', 'Titre deux'),
+      TextField::new('imageName', 'Nom image'),
       NumberField::new('imageSize')->hideOnForm(),
       TextField::new('imageFile', 'Bg image')
         ->setFormType(VichImageType::class)
         ->hideOnIndex(),
-      ImageField::new('bgImg')->setBasePath('images/home')->onlyOnIndex(),
+      ImageField::new('bgImg', 'Image de fond')->setBasePath('images/home')->onlyOnIndex(),
       TextEditorField::new('description'),
     ];
   }

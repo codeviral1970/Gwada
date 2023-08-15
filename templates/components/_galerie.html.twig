@@ -1,0 +1,18 @@
+<div class="max-w-[1140px] m-auto w-full px-4 py-8">
+    <div class="w-full text-center mb-10">
+        <button class="btn-primary">
+            <a href="{{path('app_galerie')}}" class="font-bold"> Voir la gallery</a>
+        </button>
+    </div>
+    <div class="grid sm:grid-cols-5 gap-4 md:gap-8 ">
+        {% for img in gallerieImages %}
+        <div class="relative {% if loop.index == 1 %} sm:col-span-3 col-span-2 row-span-2 {% endif %} ">
+            <img class=" w-full h-full object-cover cursor-pointer"
+                src="{{ vich_uploader_asset(img, 'imageFile')| imagine_filter('slide') }}"
+                loading="lazy" alt="">
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+

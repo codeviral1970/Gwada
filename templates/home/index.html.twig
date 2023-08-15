@@ -6,63 +6,79 @@
 {% block body %}
 
 <!-- hero - start -->
-<div class="pb-6 sm:pb-8">
-  <div class=" w-full h-full">
-    {% for img in homes %}
-    <section
-      class="min-h-96 flex justify-center items-center flex-1 shrink-0 bg-gray-100 overflow-hidden shadow-lg relative py-16 md:py-20 xl:py-48 bg-sea bg-fixed">
+<div class=" w-full h-screen">
+    {% for home in homes %}
+    <div class="relative">
+        <!-- image - start -->
+        <img src="{{ vich_uploader_asset(home, 'imageFile')}}" loading="lazy" alt="{{home.imageName}}"
+        class="w-full h-screen object-cover" /><!-- image - end -->
 
-      <!-- image - start -->
-      <img src="{{ vich_uploader_asset(img, 'imageFile')}}" loading="lazy" alt="{{img.imageName}}"
-        class="w-full h-full object-cover object-center absolute inset-0" /><!-- image - end -->
-
-      <!-- overlay - start -->
-      <div class="bg-gray-500 mix-blend-multiply absolute inset-0"> </div>
-      <!-- overlay - end -->
-
-      <!-- text start -->
-      <div class="sm:max-w-xl flex flex-col items-center relative">
-
-        <h1 class="text-white text-2xl md:text-4xl font-bold text-center mb-8 md:mb-12 shadow-sm">
-          GWADA
-          <span class="text-color-gradient">EXCURSION</span>
-        </h1>
-        <p class="text-tertiary text-lg sm:text-xl text-center mb-4 md:mb-8">Partez explorer la Guadeloupe clé en main
-        </p>
-
-        <div class="w-full flex flex-col sm:flex-row sm:justify-center gap-2.5 max-w-xs">
-          <a href="{{path('app_services')}}" class="btn-gradient-home">Voir
-            les excursions</a>
+        <!-- overlay - start -->
+        <div class="bg-gray-300 mix-blend-multiply absolute inset-0"> </div>
+        <!-- overlay - end -->
+        <div class="max-w-[1140px] m-auto">
+            <div class="absolute top-[30%] w-full h-full md:-[50%] max-w-[600px] text-white p-4">
+                <h2 class="text-3xl font-bold py-4">
+                    {{home.titleOne}}
+                </h2>
+                <span class="italic text sm text-white py-4">{{home.titleThree}} </span>
+                <h1 class="text-4xl font-bold italic py-4">
+                    GWADA <sapn class="text-color-gradient">EXCURSION</sapn>
+                </h1>
+                <p class="text-sm font-medium ">                
+                    {{home.titleTwo}}
+                </p>
+            </div>
+            <!-- text end -->
         </div>
-      </div>
-      <!-- text end -->
-    </section>
+    </div>
     {% endfor %}
-  </div>
 </div>
 <!-- hero - end -->
 
 
-<!-- gallery - start -->
-<div class="max-w-6xl mx-auto">
-  <div>
-    {% for home in homes %}
-    <div class="mb-10">
-      <h2 class="text-color-gradient text-2xl lg:text-3xl font-bold text-center mb-4 md:mb-8 xl:mb-12">{{home.title}}
-      </h2>
+<!-- 3 images presentation - start -->
+<div class="max-w-[1140px] m-auto">
+    <div class="w-full md:flex mt-[-75px]">
+        <div class="relative p-4">
+            <img 
+            class="w-full h-full object-cover relative border-4 border-white shadow-lg "
+            src="https://images.unsplash.com/photo-1594060116816-c5a149503acd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8Z3VhZGVsb3VwZXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60" alt="">
+        </div>
+        <div class="relative p-4">
+            <img 
+            class="w-full h-full object-cover relative border-4 border-white shadow-lg "
+            src="https://images.unsplash.com/photo-1652300857122-ad5309a1c4c7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fGxlcyUyMHNhaW50ZXMlMjBndWFkZWxvdXBlfGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60" alt="">
+        </div>
+        <div class="relative p-4">
+            <img 
+            class="w-full h-full object-cover relative border-4 border-white shadow-lg "
+            src="https://images.unsplash.com/photo-1687940825442-8a77ef0fe3c9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTZ8fGxlcyUyMGNhcmFpYmVzfGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60" alt="">
+        </div>
+    </div>
+</div>
+<!-- 3 images de presentation - end -->
 
-      <div class="p-4 text-lg text-skin-muted">{{home.description | raw}}</div>
+<!-- Service - start -->
+<div class="max-w-[1140px] m-auto">
+    {% for home in homes %}
+    <div class="mb-10 mt-10">
+        <h2 class="text-color-gradient text-2xl lg:text-3xl font-bold text-center mb-4 md:mb-8 xl:mb-12">
+            {{home.title}}
+        </h2>
+        <div class="relative">
+            <div class="p-4 text-lg text-secondary">
+                {{home.description | raw}}
+            </div>
+        </div>
     </div>
     {% endfor %}
-
-    {% include "components/_excursion.html.twig" %}
-  </div>
-  <div class="max-w-screen-xl mx-auto">
-    <div class="md:px-4 py-6 ">
-      {% include "components/_card.html.twig" %}
-    </div>
-  </div>
+    
+    {% include "components/_card.html.twig" %}
 </div>
 
-<!-- gallery - end -->
+<!-- Gallery - start -->
+ {% include "components/_galerie.html.twig" %}
+<!-- Gallery - end -->
+</div>
 {% endblock %}

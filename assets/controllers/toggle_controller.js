@@ -1,7 +1,7 @@
-import { Controller } from '@hotwired/stimulus';
+import { Controller } from "@hotwired/stimulus";
 
 export default class extends Controller {
-  static targets = ['menu', 'menuButtonClose', 'menuButtonOpen'];
+  static targets = ["menu", "menuButtonClose", "menuButtonOpen"];
   static values = { isOpen: { type: Boolean, default: false } };
 
   menu() {
