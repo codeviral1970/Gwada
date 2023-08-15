@@ -11,3 +11,11 @@ Dans ce client,
 Installation de SEO
 
 Fix design
+
+Pour accéder à hostinger et mettre en mode prod ou dev
+
+> php composer.phar dump-env prod
+
+Pour generer un fichier apache pack
+
+> php composer.phar require symfony/apache-pack
