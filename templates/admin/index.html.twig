@@ -1,31 +1,70 @@
 {% extends '@!EasyAdmin/page/content.html.twig' %}
 
 {% block page_title %}
-	Bienvenue sur la page administration du site
+Bienvenue sur la page administration du site
 {% endblock %}
 {% block head_stylesheets %}
-	<link rel="stylesheet" href="{{ asset('app.css', ea.assets.defaultAssetPackageName) }}">
-	{{ encore_entry_link_tags('app') }}
+<link rel="stylesheet" href="{{ asset('app.css', ea.assets.defaultAssetPackageName) }}">
+{{ encore_entry_link_tags('app') }}
 {% endblock %}
 
 {% block main %}
-	<div class="container-fluid pt-4 px-4">
-		<div class="row g-4">
-	
+<div class="container-fluid pt-4 px-4">
+	<div class=" text-black text-sm">
+
+		<div class="py-3">
+			<h2>Mode d'utilisation de l'admin</h2>
+			<p>Website c'est l'onglet qui permet de gérer toutes les pages du site.</p>
+			<p>Pour modifier cliquer sur les trois petis points pour editer ou supprimer</p>
 		</div>
-		<div class="flex mt-5 p-4 text-black">
+		<div>
+			<h3 class="text-lg">page accueil</h3>
+			<p>C'est la première page, il faut ajouter un titre et une desciption pour voir appaitre les
+				informations dans la vue.</p>
+
+			<p>Ensuite pour les titre un, titre, deux, titre trois, on peux laisser vide.</p>
+			<p>Le nom de l'image il faut ajouter un nom pour le référencement de google.</p>
 		</div>
-			<h2>Mode d'utilisation de l'admin<h2/>
-			<div>
-				<p>Website c'est l'onglet qui permet de gérer toutes les pages du site. <p/>
-			</div>
-			<div>
-				<h2>Accueil</h2>
-				<p>C'est la première page, il faut ajouter un titre et une desciption pour voir appaitre les informations dans la vue.</p>
-			</div>
+
+		<div>
+			<h3 class="text-lg">page A propos</h3>
+			<p>Dans la description ajouter simplement ou modifier la description</p>
+			<p>Pour la modification de l'image ici j'en ai mis qu'une seule alors que dans la vue il y en a 5, je ferai
+				une mise à jour pour que tu puisse gérer les images de cette page ici.</p>
+		</div>
+
+		<div>
+			<h3 class="text-lg">page activités</h3>
+			<p>La section isBest quand c'est activé c'est pour l'affichage des activités dans la page accueil (activé
+				par 2, 4, ou 6)</p>
+
+			<p>Dans la section image des activités, on peut ajouter plusieurs images.</p>
+		</div>
+
+		<div>
+			<h3 class="text-lg">page Formule</h3>
+			<p>La section ou tu peux modifier les formules et services que tu proposes</p>
+		</div>
+
+		<div>
+			<h3 class="text-lg">page Image</h3>
+			<p>Tu peux voir ici toutes les photos de tonsites web, il faut toujours modifier et donner un nom à l'image
+			</p>
+			<p>Important télécharger les photos de bonne qualité mais avec un petit poids, sinon cela mettrai du temps à
+				charger les images sur le site.</p>
+
+		</div>
+
+		<div>
+			<h3 class="text-lg">page contat</h3>
+			<p>Pour le moment tu peux juste voir tous les contacts qui t'ont envoyé un message.</p>
+
+			<p>Je verrai par la suite que faire de ces données.</p>
+		</div>
 	</div>
+</div>
 
 {% endblock %}
 {% block body_javascript %}
-	{{ encore_entry_script_tags('app') }}
+{{ encore_entry_script_tags('app') }}
 {% endblock body_javascript %}
