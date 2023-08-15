@@ -39,6 +39,15 @@ class Home
     #[ORM\Column(nullable: true)]
     private ?\DateTimeImmutable $updatedAt = null;
 
+    #[ORM\Column(type: Types::TEXT, nullable: true)]
+    private ?string $titleTwo = null;
+
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $titleThree = null;
+
+    #[ORM\Column(type: Types::TEXT, nullable: true)]
+    private ?string $titleOne = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -133,6 +142,42 @@ class Home
     public function setUpdatedAt(?\DateTimeImmutable $updatedAt): self
     {
         $this->updatedAt = $updatedAt;
+
+        return $this;
+    }
+
+    public function getTitleTwo(): ?string
+    {
+        return $this->titleTwo;
+    }
+
+    public function setTitleTwo(?string $titleTwo): self
+    {
+        $this->titleTwo = $titleTwo;
+
+        return $this;
+    }
+
+    public function getTitleThree(): ?string
+    {
+        return $this->titleThree;
+    }
+
+    public function setTitleThree(?string $titleThree): self
+    {
+        $this->titleThree = $titleThree;
+
+        return $this;
+    }
+
+    public function getTitleOne(): ?string
+    {
+        return $this->titleOne;
+    }
+
+    public function setTitleOne(?string $titleOne): self
+    {
+        $this->titleOne = $titleOne;
 
         return $this;
     }

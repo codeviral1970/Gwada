@@ -5,31 +5,46 @@
 
 {% block body %}
 
-<div class="max-w-6xl mx-auto py-6 sm:py-8 lg:py-12 ">
-  <div class=" px-4 ">
-    <div class="grid md:grid-cols-2 gap-8 lg:gap-12">
-      {% for about in abouts %}
-      <div class="md:pt-1">
-        <div class="h-64 md:h-auto text-primary overflow-hidden rounded-lg shadow-lg">
-          <img src="{{ vich_uploader_asset(about, 'imageFile') | imagine_filter('about') }}" loading="lazy"
-            alt="{{about.imageName}}" class="w-full h-full object-cover object-center" />
-        </div>
-      </div>
-      <div class="md:pt-1">
-        <h1 class="text-color-gradient text-2xl sm:text-3xl font-bold text-center mb-4 md:mb-6">
-          <span class="capitalize">à</span> propos
-        </h1>
+<div class="max-w-[1140px] mx-auto py-16 px-4 grid lg:grid-cols-2 gap-4 ">
+    {# Leftside  #}
+    <div class="grid grid-cols-2 grid-rows-3 md:grid-rows-6 h-[80vh]">
+        <img 
+        class="row-span-1 md:row-span-3 object-cover w-full h-full p-2" 
+        src="https://images.unsplash.com/photo-1662915677487-fcceeb724389?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDV8fHBsYWdlJTIwY29jb3RpZXJ8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=800&q=60" alt="">
 
-        <div class="text-secondary text-lg mb-6 md:mb-8 leading-relaxed">
-          {{about.description |raw}}
-        </div>
-      </div>
-      {% endfor %}
+         <img 
+         class="row-span-2 object-cover w-full h-full p-2" 
+        src="https://images.unsplash.com/photo-1687940825442-8a77ef0fe3c9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTZ8fGxlcyUyMGNhcmFpYmVzfGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60" alt="">
+
+       
+
+         <img 
+         class="row-span-1 md:row-span-2 object-cover w-full h-full p-2" 
+        src="https://images.unsplash.com/photo-1659358288798-fd73f9c8613d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NjZ8fHBsYWdlJTIwY29jb3RpZXJ8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=800&q=60" alt="">
+
+         <img 
+         class="row-span-1 md:row-span-3 object-cover w-full h-full p-2" 
+        src="https://images.unsplash.com/photo-1687940825929-081ea6535b4c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDJ8fGxlcyUyMGNhcmFpYmVzfGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60" alt="">
+
+        <img 
+        class="row-span-1 md:row-span-2 object-cover w-full h-full p-2" 
+        src="https://images.unsplash.com/photo-1668803054923-75c368bb6e4c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTh8fHBsYWdlJTIwY29jb3RpZXJ8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=800&q=60" alt="">
+
     </div>
-  </div>
+    {# Right side  #}
+    <div class="flex flex-col h-full justify-center">
+        {% for about in abouts %}
+            <div class="md:pt-1">
+                <h2 class="text-5xl md:text-6xl font-bold">
+                <span class="capitalize">à</span> <span class="text-color-gradient">propos</span> 
+                </h2>
+
+                <p class="text-2xl py-6 leading-relaxed">
+                {{about.description |raw}}
+                </p>
+            </div>
+            {% endfor %}
+    </div>
 </div>
 
-{# <div class="bg-gray-200">
-  {% include "components/_card.html.twig" %}
-</div> #}
 {% endblock %}
