@@ -1,5 +1,7 @@
 import { Carousel, initTE } from "tw-elements";
 
+initTE({ Carousel });
+
 // const myCarousel = document.getElementById("gwada-slider");
 // myCarousel.addEventListener("slide.te.carousel", () => {
 //
@@ -10,16 +12,16 @@ import { Carousel, initTE } from "tw-elements";
 //   (interval = "1000")
 // );
 
-const options = {
-  interval: 1000, // Set the interval to 3000 milliseconds
-  ride: true,
-  wrap: true,
-  touch: true,
-};
+// const options = {
+//   interval: 1000,
+//   ride: true,
+//   wrap: true,
+//   touch: true,
+// };
 
-document.addEventListener("DOMContentLoaded", () => {
-  const myCarouselElement = document.getElementById("gwada-slider");
-  const myCarousel = new Carousel(myCarouselElement, options);
-});
+// document.addEventListener("DOMContentLoaded", () => {
+//   const myCarouselElement = document.getElementById("gwada-slider");
+//   const myCarousel = new Carousel(myCarouselElement, options);
+// });
 
-initTE({ Carousel });
+// initTE({ Carousel });

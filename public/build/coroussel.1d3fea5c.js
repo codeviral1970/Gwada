@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunk=self.webpackChunk||[]).push([[45],{817:(e,n,r)=>{var t=r(94),a={interval:1e3,ride:!0,wrap:!0,touch:!0};document.addEventListener("DOMContentLoaded",(function(){var e=document.getElementById("gwada-slider");new t.lr(e,a)})),(0,t.vN)({Carousel:t.lr})}},e=>{e.O(0,[94],(()=>{return n=817,e(e.s=n);var n}));e.O()}]);
