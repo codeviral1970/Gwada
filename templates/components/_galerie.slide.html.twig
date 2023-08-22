@@ -3,7 +3,7 @@ data-controller="carousel"
 data-carousel-options-value='{"direction": "vertical"}'
 class="max-w-lg swiper-container shadow-lg shadow-black-500 group">
   <div
-    id="gwada-slider"
+    id="gwadaSlider"
     class="relative"
     data-te-carousel-init
     data-te-carousel-slide
@@ -15,7 +15,7 @@ class="max-w-lg swiper-container shadow-lg shadow-black-500 group">
       {% for key, slide in slides %}
       <button
         type="button"
-        data-te-target="#gwada-slider"
+        data-te-target="#gwadaSlider"
         data-te-slide-to="{{key}}"
         data-te-carousel-active
         class="mx-[3px] box-content flex-initial cursor-pointer border-0 border-y-[10px] border-solid border-transparent bg-white bg-clip-padding p-0 -indent-[999px] opacity-50 transition-opacity duration-500 ease-[cubic-bezier(0.25,0.1,0.25,1.0)] motion-reduce:transition-none"
@@ -48,7 +48,7 @@ class="max-w-lg swiper-container shadow-lg shadow-black-500 group">
     <button
       class="absolute bottom-0 left-0 top-0 z-[1] flex w-[15%] items-center justify-center border-0 bg-none p-0 text-center text-white opacity-50 transition-opacity duration-150 ease-[cubic-bezier(0.25,0.1,0.25,1.0)] hover:text-white hover:no-underline hover:opacity-90 hover:outline-none focus:text-white focus:no-underline focus:opacity-90 focus:outline-none motion-reduce:transition-none"
       type="button"
-      data-te-target="#gwada-slider"
+      data-te-target="#gwadaSlider"
       data-te-slide="prev">
       <span class="inline-block h-8 w-8">
         <svg
@@ -73,7 +73,7 @@ class="max-w-lg swiper-container shadow-lg shadow-black-500 group">
     <button
       class="absolute bottom-0 right-0 top-0 z-[1] flex w-[15%] items-center justify-center border-0 bg-none p-0 text-center text-white opacity-50 transition-opacity duration-150 ease-[cubic-bezier(0.25,0.1,0.25,1.0)] hover:text-white hover:no-underline hover:opacity-90 hover:outline-none focus:text-white focus:no-underline focus:opacity-90 focus:outline-none motion-reduce:transition-none"
       type="button"
-      data-te-target="#gwada-slider"
+      data-te-target="#gwadaSlider"
       data-te-slide="next">
       <span class="inline-block h-8 w-8">
         <svg

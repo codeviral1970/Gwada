@@ -3,19 +3,11 @@
     "app": {
       "js": [
         "/build/runtime.2428ddbc.js",
-        "/build/94.5754e574.js",
-        "/build/14.d29de266.js",
-        "/build/app.93283c55.js"
+        "/build/346.a103571d.js",
+        "/build/app.7b31df67.js"
       ],
       "css": [
-        "/build/app.f299cc0b.css"
-      ]
-    },
-    "coroussel": {
-      "js": [
-        "/build/runtime.2428ddbc.js",
-        "/build/94.5754e574.js",
-        "/build/coroussel.a1ffcbd2.js"
+        "/build/app.717303cd.css"
       ]
     }
   }
