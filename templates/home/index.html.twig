@@ -40,21 +40,17 @@
 <!-- 3 images presentation - start -->
 <div class="max-w-[1140px] m-auto">
     <div class="w-full md:flex mt-[-75px]">
+    {% for thumb in thumbs %}
+        {% if thumb.isActive %}
         <div class="relative p-4 mt-12 md:mt-0">
             <img 
             class="w-full h-full object-cover relative border-4 border-white shadow-lg "
-            src="https://images.unsplash.com/photo-1594060116816-c5a149503acd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8Z3VhZGVsb3VwZXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60" alt="">
+             src="{{ vich_uploader_asset(thumb, 'imageFile')| imagine_filter('slide') }}"
+                loading="lazy" alt="{{thumb.name}}"
+            >
         </div>
-        <div class="relative p-4">
-            <img 
-            class="w-full h-full object-cover relative border-4 border-white shadow-lg "
-            src="https://images.unsplash.com/photo-1652300857122-ad5309a1c4c7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fGxlcyUyMHNhaW50ZXMlMjBndWFkZWxvdXBlfGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60" alt="">
-        </div>
-        <div class="relative p-4">
-            <img 
-            class="w-full h-full object-cover relative border-4 border-white shadow-lg "
-            src="https://images.unsplash.com/photo-1687940825442-8a77ef0fe3c9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTZ8fGxlcyUyMGNhcmFpYmVzfGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60" alt="">
-        </div>
+        {% endif %}
+    {% endfor %}
     </div>
 </div>
 <!-- 3 images de presentation - end -->

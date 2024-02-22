@@ -10,6 +10,7 @@ use App\Repository\ContactInfoRepository;
 use App\Repository\HomeRepository;
 use App\Repository\ServicesRepository;
 use App\Repository\SlideRepository;
+use App\Repository\ThumbImageRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bridge\Twig\Mime\TemplatedEmail;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -31,12 +32,14 @@ class HomeController extends AbstractController
         ServicesRepository $services,
         HomeRepository $home,
         SlideRepository $slide,
+        ThumbImageRepository $thumb,
         Request $request
     ): Response {
 
         $services = $services->findAll();
         $bestServices = $this->em->getRepository(Services::class)->findByIsBest(1);
         $homes = $home->findAll();
+        $thumbs = $thumb->findAll();
         $footerYear = new \DateTime();
         $lastSlides = $slide->findLastTreeImages();
         $gallerieImages = $slide->findImagesInFirstPage();
@@ -44,6 +47,7 @@ class HomeController extends AbstractController
         return $this->render('home/index.html.twig', [
             'services' => $services,
             'homes' => $homes,
+            'thumbs' => $thumbs,
             'footerYear' => $footerYear,
             'slides' => $lastSlides,
             'bestServices' => $bestServices,

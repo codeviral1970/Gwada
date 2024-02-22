@@ -3,9 +3,9 @@
         {% if service.isBest %}
         <!-- image - start -->
         <a href="{{path('app_services_show', {'slug': service.slug}) }}"
-            class="group h-40 md:h-80 flex items-end overflow-hidden shadow-lg relative">
+            class="group h-80 flex items-end overflow-hidden shadow-lg relative">
             
-            <img src="{{ vich_uploader_asset(service,'imageFile')| imagine_filter('miniature') }}" loading="lazy"
+            <img src="{{ vich_uploader_asset(service,'imageFile')| imagine_filter('activite') }}" loading="lazy"
             alt="{{service.name}}"
             class="w-full h-full object-cover object-center border-4 border-white absolute inset-0 group-hover:scale-110 transition cursor-pointer" />
             

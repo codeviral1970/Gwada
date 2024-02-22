@@ -40,6 +40,9 @@ class ServicesCrudController extends AbstractCrudController
             ImageField::new('avatar')
                 ->setBasePath('images/services')
                 ->onlyOnIndex(),
+            TextField::new('imageFile', 'Imagefile')
+                ->setFormType(VichImageType::class)
+                ->hideOnIndex(),
             TextField::new('imageName', 'Nom image'),
             TextEditorField::new('goodToKnow', 'Bon à savoir')->hideOnIndex(),
             TextEditorField::new('courseOfTheDay', 'Déroulement journée')->hideOnIndex(),

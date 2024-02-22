@@ -2,7 +2,7 @@
     {% for service in services %}
         <!-- image - start -->
         <a href="{{path('app_services_show', {'slug': service.slug}) }}"
-            class="group h-40 md:h-80 flex items-end overflow-hidden shadow-lg relative">
+            class="group h-80 flex items-end overflow-hidden shadow-lg relative">
             
             <img src="{{ vich_uploader_asset(service,'imageFile')| imagine_filter('miniature') }}" loading="lazy"
             alt="{{service.name}}"
