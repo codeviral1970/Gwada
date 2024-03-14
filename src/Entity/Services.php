@@ -96,9 +96,11 @@ class Services
 
     public function __construct()
     {
-        return $this->formules = new ArrayCollection();
+        $this->formules = new ArrayCollection();
         // $this->service = new ArrayCollection();
         $this->slides = new ArrayCollection();
+
+        return $this;
     }
 
     public function getId(): ?int
