@@ -49,14 +49,12 @@ class Services
     #[ORM\OneToMany(mappedBy: 'activity', targetEntity: Formule::class)]
     private Collection $formules;
 
-    #[Vich\UploadableField(mapping: 'services', fileNameProperty: 'avatar', size: 'imageSize')]
+    #[Vich\UploadableField(mapping: 'services', fileNameProperty: 'avatar')]
     private ?File $imageFile = null;
 
     #[ORM\Column(type: 'string')]
     private ?string $imageName = null;
 
-    #[ORM\Column(type: 'integer')]
-    private ?int $imageSize = null;
 
     #[ORM\Column(nullable: true)]
     private ?\DateTimeImmutable $updatedAt = null;
@@ -94,15 +92,7 @@ class Services
         return $this->imageName;
     }
 
-    public function setImageSize(?int $imageSize): void
-    {
-        $this->imageSize = $imageSize;
-    }
 
-    public function getImageSize(): ?int
-    {
-        return $this->imageSize;
-    }
 
     public function __construct()
     {
