@@ -1,4 +1,4 @@
-<div class="relative px-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-4 md:mb-8">
+{# <div class="relative px-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-4 md:mb-8">
     {% for service in services %}
         {% if service.isBest %}
         <!-- image - start -->
@@ -9,12 +9,42 @@
             alt="{{service.name}}"
             class="w-full h-full object-cover object-center border-4 border-white absolute inset-0 group-hover:scale-110 transition cursor-pointer" />
             
+         
             <span
-            class="inline-block text-white uppercase md:text-lg relative ml-4 md:ml-5 mb-3 z-10 left-0 bottom-0 text-2xl font-bold p-4">        
+            class="inline-block text-white h-5 bg-opacity text-grey-200 uppercase md:text-lg relative z-10 left-0 bottom-0 text-2xl font-bold ">        
                 {{service.name}}
             </span>
+      
+            
         </a> 
-        <!-- image  end -->
         {% endif %}
+    {% endfor %}
+</div> #}
+<div class="relative w-full mt-6 mb-4 grid grid-cols-1 gap-4 px-4 sm:grid-cols-2 md:mb-8 md:grid-cols-3 lg:grid-cols-4">
+  <!-- image - start -->
+   {% for service in services %}
+        {% if service.isBest %}
+  <a href="{{path('app_services_show', {'slug': service.slug}) }}"
+            class="group h-80 flex items-end overflow-hidden shadow-lg relative">
+    <img src="{{ vich_uploader_asset(service,'imageFile')| imagine_filter('activite') }}" loading="lazy"
+            alt="{{service.name}}"
+            class="w-full h-full object-cover object-center absolute inset-0 group-hover:scale-110 transition cursor-pointer" />
+
+    <div class="absolute w-full bg-primary/75 text-white">
+  <span class="relative w-full inline-block p-3 text-2xl font-bold uppercase md:text-lg">{{service.name}} 
+  <div>
+    <span class="text-sm font-bold text-white">{{service.promoDescription}}</span>
+  </div>
+  {% if service.promoPrice != "" %}
+    <div class="absolute right-1 top-0 mt-1 p-3 bg-primary text-white rounded-full w-10 h-10 flex items-center justify-center text-xs">
+            <span class="text-xs font-bold">{{service.promoPrice}}€</span>
+        </div>
+        {% endif %}
+  </span>
+</div>
+
+
+  </a>
+ {% endif %}
     {% endfor %}
 </div>

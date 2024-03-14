@@ -16,6 +16,7 @@ use EasyCorp\Bundle\EasyAdminBundle\Field\BooleanField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\CollectionField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
+use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
 
 class ServicesCrudController extends AbstractCrudController
 {
@@ -40,10 +41,13 @@ class ServicesCrudController extends AbstractCrudController
             ImageField::new('avatar')
                 ->setBasePath('images/services')
                 ->onlyOnIndex(),
-            TextField::new('imageFile', 'Imagefile')
+            TextField::new('imageFile', 'Image pour la carte')
                 ->setFormType(VichImageType::class)
                 ->hideOnIndex(),
-            TextField::new('imageName', 'Nom image'),
+            TextField::new('imageName', 'Nom de l\'image (un nom pour le référencement Google)'),
+            TextField::new('promoPrice'),
+            TextField::new('promoDescription'),
+            AssociationField::new('category', 'Catégorie'),
             TextEditorField::new('goodToKnow', 'Bon à savoir')->hideOnIndex(),
             TextEditorField::new('courseOfTheDay', 'Déroulement journée')->hideOnIndex(),
             TextEditorField::new('menu', 'Menu'),

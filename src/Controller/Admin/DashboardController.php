@@ -5,6 +5,7 @@ namespace App\Controller\Admin;
 use App\Entity\Home;
 use App\Entity\User;
 use App\Entity\About;
+use App\Entity\Category;
 use App\Entity\Slide;
 use App\Entity\Formule;
 use App\Entity\Services;
@@ -43,6 +44,7 @@ class DashboardController extends AbstractDashboardController
                 MenuItem::linkToCrud('Accueil', 'fas fa-home', Home::class),
                 MenuItem::linkToCrud('3 photos', 'fas fa-home', ThumbImage::class),
                 MenuItem::linkToCrud('A propos', 'fas fa-user', About::class),
+                MenuItem::linkToCrud('Catégorie', 'fas fa-user', Category::class),
                 MenuItem::linkToCrud('Activités', 'fas fa-list', Services::class),
                 MenuItem::linkToCrud('Caroussel image', 'fas fa-image', Slide::class),
                 MenuItem::linkToCrud('Formule', 'fas fa-file', Formule::class),

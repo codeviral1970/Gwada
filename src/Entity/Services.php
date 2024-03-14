@@ -67,6 +67,15 @@ class Services
     #[ORM\Column]
     private ?bool $isBest = null;
 
+    #[ORM\ManyToOne(inversedBy: 'services')]
+    private ?Category $category = null;
+
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $promoPrice = null;
+
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $promoDescription = null;
+
 
     /**
      * @param File|\Symfony\Component\HttpFoundation\File\UploadedFile|null $imageFile
@@ -288,6 +297,42 @@ class Services
     public function setIsBest(bool $isBest): self
     {
         $this->isBest = $isBest;
+
+        return $this;
+    }
+
+    public function getCategory(): ?Category
+    {
+        return $this->category;
+    }
+
+    public function setCategory(?Category $category): self
+    {
+        $this->category = $category;
+
+        return $this;
+    }
+
+    public function getPromoPrice(): ?string
+    {
+        return $this->promoPrice;
+    }
+
+    public function setPromoPrice(?string $promoPrice): self
+    {
+        $this->promoPrice = $promoPrice;
+
+        return $this;
+    }
+
+    public function getPromoDescription(): ?string
+    {
+        return $this->promoDescription;
+    }
+
+    public function setPromoDescription(?string $promoDescription): self
+    {
+        $this->promoDescription = $promoDescription;
 
         return $this;
     }

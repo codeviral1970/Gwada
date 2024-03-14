@@ -6,6 +6,7 @@ use App\Entity\Contact;
 use App\Entity\Services;
 use App\Form\ContactType;
 use App\Repository\AboutRepository;
+use App\Repository\CategoryRepository;
 use App\Repository\ContactInfoRepository;
 use App\Repository\HomeRepository;
 use App\Repository\ServicesRepository;
@@ -66,12 +67,14 @@ class HomeController extends AbstractController
     }
 
     #[Route('/activites', name: 'app_services')]
-    public function services(ServicesRepository $services): Response
+    public function services(ServicesRepository $services, CategoryRepository $category): Response
     {
         $services = $services->findAll();
+        $categorys = $category->findAll();
 
         return $this->render('home/service.html.twig', [
             'services' => $services,
+            'categorys' => $categorys
         ]);
     }
 
