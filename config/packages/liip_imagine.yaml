@@ -10,10 +10,16 @@ liip_imagine:
             quality: 75
             filters:
                 thumbnail: { size: [250, 250], mode: outbound }
+                # fixed:
+                #     width: 525
+                #     height: 400
         about:
             quality: 80
             filters:
                 thumbnail: { size: [600, 450], mode: outbound }
+                # fixed:
+                #     width: 600
+                #     height: 450
         show:
             quality: 80
             filters:
@@ -23,7 +29,7 @@ liip_imagine:
         index:
             quality: 80
             filters:
-                #thumbnail: { size: [800, 600], mode: outbound }
+                thumbnail: { size: [800, 600], mode: outbound }
                 scale:
                     to: 0.2
         
@@ -42,3 +48,11 @@ liip_imagine:
                 fixed:
                     width: 382
                     height: 250
+        
+        activite:
+            quality: 75
+            filters:
+                thumbnail: { size: [250, 400], mode: outbound }
+                # fixed:
+                #     width: 525
+                #     height: 400

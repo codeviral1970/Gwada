@@ -1,20 +1,20 @@
 <div class="relative px-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-4 md:mb-8">
     {% for service in services %}
-        <!-- image - start -->
-        <a href="{{path('app_services_show', {'slug': service.slug}) }}"
-            class="group h-40 md:h-80 flex items-end overflow-hidden shadow-lg relative">
-            
-            <img src="{{ vich_uploader_asset(service,'imageFile')| imagine_filter('miniature') }}" loading="lazy"
-            alt="{{service.name}}"
-            class="w-full h-full object-cover object-center border-4 border-white absolute inset-0 group-hover:scale-110 transition cursor-pointer" />
-            
-            <span
-            class="inline-block text-white uppercase md:text-lg relative ml-4 md:ml-5 mb-3 z-10 left-0 bottom-0 text-2xl font-bold p-4">        
-                {{service.name}}
-            </span>
-        </a> 
-        <!-- image  end -->
+
+        <div class="bg-white h-auto shadow shadow-primary rounded-md ">
+            <a href="{{path('app_services_show', {'slug': service.slug}) }}"
+                class="group flex items-end overflow-hidden relative w-full">
+                <div
+                    class="bg-white overflow-hidden w-full">
+                    <img class="h-48 w-full object-cover inset-0 group-hover:scale-110 transition cursor-pointer"
+                        src="{{ vich_uploader_asset(service,'imageFile')| imagine_filter('miniature') }}" loading="lazy"
+                        alt="{{service.name}}" />
+                    <div class="p-6">
+                        <h4 class="mt-2 font-semibold text-lg leading-tight truncate">{{service.name}}</h4>
+                    </div>
+                </div>
+            </a>
+        </div>
+    
     {% endfor %}
-</div> 
-
-
+</div>

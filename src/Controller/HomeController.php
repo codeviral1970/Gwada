@@ -6,10 +6,12 @@ use App\Entity\Contact;
 use App\Entity\Services;
 use App\Form\ContactType;
 use App\Repository\AboutRepository;
+use App\Repository\CategoryRepository;
 use App\Repository\ContactInfoRepository;
 use App\Repository\HomeRepository;
 use App\Repository\ServicesRepository;
 use App\Repository\SlideRepository;
+use App\Repository\ThumbImageRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bridge\Twig\Mime\TemplatedEmail;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -31,12 +33,14 @@ class HomeController extends AbstractController
         ServicesRepository $services,
         HomeRepository $home,
         SlideRepository $slide,
+        ThumbImageRepository $thumb,
         Request $request
     ): Response {
 
         $services = $services->findAll();
         $bestServices = $this->em->getRepository(Services::class)->findByIsBest(1);
         $homes = $home->findAll();
+        $thumbs = $thumb->findAll();
         $footerYear = new \DateTime();
         $lastSlides = $slide->findLastTreeImages();
         $gallerieImages = $slide->findImagesInFirstPage();
@@ -44,6 +48,7 @@ class HomeController extends AbstractController
         return $this->render('home/index.html.twig', [
             'services' => $services,
             'homes' => $homes,
+            'thumbs' => $thumbs,
             'footerYear' => $footerYear,
             'slides' => $lastSlides,
             'bestServices' => $bestServices,
@@ -62,12 +67,14 @@ class HomeController extends AbstractController
     }
 
     #[Route('/activites', name: 'app_services')]
-    public function services(ServicesRepository $services): Response
+    public function services(ServicesRepository $services, CategoryRepository $category): Response
     {
         $services = $services->findAll();
+        $categorys = $category->findAll();
 
         return $this->render('home/service.html.twig', [
             'services' => $services,
+            'categorys' => $categorys
         ]);
     }
 

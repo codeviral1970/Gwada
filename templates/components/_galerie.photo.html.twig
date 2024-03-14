@@ -9,7 +9,7 @@
         <div class="relative {% if loop.index == 1 %} sm:col-span-3 col-span-2 row-span-2 {% endif %} ">
             <img class=" w-full h-full object-cover cursor-pointer"
                 src="{{ vich_uploader_asset(img, 'imageFile')| imagine_filter('slide') }}"
-                loading="lazy" alt="">
+                loading="lazy" alt="{{img.imageName}}">
         </div>
         {% endfor %}
     </div>

@@ -36,7 +36,6 @@ class SlideCrudController extends AbstractCrudController
                 ->setUploadDir('public/images/gallery')
                 ->setUploadedFileNamePattern('[randomhash].[extension]')
                 ->onlyOnIndex(),
-
             AssociationField::new('gallery', 'Activité'),
             BooleanField::new('isFirstPage'),
 
