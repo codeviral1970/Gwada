@@ -2,12 +2,31 @@
 
 {% block body %}
 
-<div class="max-w-[1140px] m-auto">
-    <div class="text-center ">
+<div class="max-w-[1140px] m-auto forced-color-adjust-none mb-5">
+
+    {% for category in categorys %}
+      {% if category.name == "Terre" %}
+         <div class="text-center ">
       <h2 class="text-gray-700 text-xl md:text-2xl font-bold py-7 uppercase">
-      Listes des <span class="text-color-gradient">activités</span> </h2>
+      Nos activités<span class="text-color-gradient"> TERRE</span> </h2>
     </div>
-    {% include "components/_excursion.html.twig" %}
+        {% include "components/_excursion.html.twig" with { services: category.services } %}
+      {% endif %}
+      {% if category.name == "Mer" %}
+         <div class="text-center ">
+      <h2 class="text-gray-700 text-xl md:text-2xl font-bold py-7 uppercase">
+      Nos activités <span class="text-color-gradient">MER</span> </h2>
+    </div>
+        {% include "components/_excursion.html.twig" with { services: category.services } %}
+      {% endif %}
+      {% if category.name == "Air" %}
+         <div class="text-center ">
+      <h2 class="text-gray-700 text-xl md:text-2xl font-bold py-7 uppercase">
+      Nos activités <span class="text-color-gradient">AIR</span> </h2>
+    </div>
+        {% include "components/_excursion.html.twig" with { services: category.services } %}
+      {% endif %}
+    {% endfor %}
 </div>
 
 
