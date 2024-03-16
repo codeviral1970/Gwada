@@ -11,6 +11,7 @@ use App\Entity\Formule;
 use App\Entity\Services;
 use App\Entity\ContactInfo;
 use App\Entity\ThumbImage;
+use EasyCorp\Bundle\EasyAdminBundle\Config\Assets;
 use Vich\UploaderBundle\Entity\File;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -18,6 +19,7 @@ use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractDashboardController;
+use Symfony\Config\WebpackEncoreConfig;
 
 class DashboardController extends AbstractDashboardController
 {
@@ -53,5 +55,11 @@ class DashboardController extends AbstractDashboardController
 
         yield MenuItem::linkToCrud('Utilisateur', 'fas fa-user', User::class);
         yield MenuItem::linkToUrl('Gwada site', 'fas fa-home', $this->generateUrl('app_home'));
+    }
+
+    public function configureAssets(): Assets
+    {
+        return parent::configureAssets()
+            ->addWebpackEncoreEntry('admin');
     }
 }

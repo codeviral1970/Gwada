@@ -2,9 +2,10 @@
 
 namespace App\Entity;
 
-use App\Repository\ContactRepository;
+use DateTimeImmutable;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use App\Repository\ContactRepository;
 
 
 #[ORM\Entity(repositoryClass: ContactRepository::class)]
@@ -29,6 +30,7 @@ class Contact
 
   #[ORM\Column(type: Types::TEXT)]
   private ?string $message = null;
+
 
   public function getId(): ?int
   {

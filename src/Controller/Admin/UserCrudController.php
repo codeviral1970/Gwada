@@ -20,9 +20,9 @@ class UserCrudController extends AbstractCrudController
   public function configureFields(string $pageName): iterable
   {
     return [
-      IdField::new('id')->hideOnForm()->hideOnIndex(),
+      IdField::new('id')->hideOnForm(),
       TextField::new('email'),
-      TextField::new('password'),
+      TextField::new('password')->hideOnIndex(),
     ];
   }
 
@@ -30,7 +30,12 @@ class UserCrudController extends AbstractCrudController
   {
     return $actions
       // ->disable(Crud::PAGE_EDIT, Action::DELETE)
-      ->add(Crud::PAGE_INDEX, Action::DETAIL);
+      ->add(Crud::PAGE_INDEX, Action::DETAIL)
+      ->remove(Crud::PAGE_INDEX, Action::NEW)
+      ->remove(Crud::PAGE_INDEX, Action::EDIT)
+      ->remove(Crud::PAGE_INDEX, Action::DELETE)
+      ->remove(Crud::PAGE_DETAIL, Action::EDIT)
+      ->remove(Crud::PAGE_DETAIL, Action::DELETE);
   }
 
   public function configureCrud(Crud $crud): Crud

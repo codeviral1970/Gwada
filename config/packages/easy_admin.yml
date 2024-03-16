@@ -7,3 +7,5 @@ easy_admin:
       form:
         fields:
           - { property: 'imageFile', type: 'file' }
+    
+    

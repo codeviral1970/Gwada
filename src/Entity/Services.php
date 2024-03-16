@@ -16,6 +16,7 @@ use Vich\UploaderBundle\Mapping\Annotation as Vich;
 #[ORM\Entity(repositoryClass: ServicesRepository::class)]
 #[Vich\Uploadable]
 #[UniqueEntity('name')]
+#[UniqueEntity('slug')]
 class Services
 {
     #[ORM\Id]

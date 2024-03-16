@@ -2,8 +2,10 @@
 
 namespace App\Controller\Admin;
 
-use App\Entity\ThumbImage;
 use App\Form\ThumbType;
+use App\Entity\ThumbImage;
+use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
+use EasyCorp\Bundle\EasyAdminBundle\Dto\CrudDto;
 use Vich\UploaderBundle\Form\Type\VichImageType;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
@@ -32,7 +34,14 @@ class ThumbImageCrudController extends AbstractCrudController
                 ->setUploadDir('public/images/home')
                 ->setUploadedFileNamePattern('[randomhash].[extension]')
                 ->onlyOnIndex(),
-            BooleanField::new('isActive'),
+            BooleanField::new('isActive', 'Active'),
         ];
+    }
+
+    public function configureCrud(Crud $crud): Crud
+    {
+        return $crud
+            ->setEntityLabelInPlural('Gestion les trois images de la page accueil')
+            ->setEntityLabelInSingular('Image');
     }
 }
